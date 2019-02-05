@@ -2,5 +2,5 @@
 
 label: Ability
 id : cs
-aspects: Python, Machine Learning, Mathematics, Statistics, Deep Learning, Business Knowledge
-percentage: 80, 90, 70, 60, 80, 75
+aspects: Python, ML, Maths, Stats, Domain
+percentage: 80, 90, 70, 60, 75
