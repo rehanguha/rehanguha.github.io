@@ -1,8 +1,7 @@
-- name: Massachusets Instutite of Technology
-  link: http://web.mit.edu/
-  date: 2011 - <i class="fa fa-clock-o" aria-hidden="true" title="Until Now"></i>
-  descr: <br> (expected graduation in 2019)
+- name: Institute of Engineering and Management
+  link: https://iem.edu.in/
+  date: 2013 - 2016
 
-- name: Harvard
-  link: http://www.harvard.edu/
-  date: 2007 - 2011
+- name: Delhi Public School, Ruby Park
+  link: http://www.dpskolkata.com/
+  date: 2011 - 2013
