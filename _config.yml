@@ -3,7 +3,7 @@
 # Site wide configuration
 ####################################
 #
-title: RGJ - Portfolio & Blog
+title: Portfolio & Blog
 email: rehanguha29@gmail.com
 description: A simple and awesome blog theme powered by jekyll.
 url: # the base hostname & protocol for your site
@@ -14,7 +14,7 @@ keywords: ["blog", "jekyll"]
 # Jekyll configuration
 ####################################
 #
-timezone:          Europe/Paris
+timezone:          Asia/Kolkata
 markdown:          kramdown
 highlighter:       rouge
 excerpt_separator: <!--more-->
@@ -33,13 +33,13 @@ kramdown:
 ####################################
 #
 owner:
-  name: Rehan Guha
+  name: "Rehan Guha"
   avatar: leonids-logo.png
   job: "Data Scientist & Machine Learning Engineer"
   bio: ""
   email:
   disqus-shortname:
-  twitter: "rehanguhajoel"#username
+  twitter: "rehan_guha"#username
   facebook: "rehanguhajoel"#username
   google:
     plus: #username
