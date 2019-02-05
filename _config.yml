@@ -3,8 +3,8 @@
 # Site wide configuration
 ####################################
 #
-title: Leonids
-email:
+title: RGJ - Portfolio & Blog
+email: rehanguha29@gmail.com
 description: A simple and awesome blog theme powered by jekyll.
 url: # the base hostname & protocol for your site
 keywords: ["blog", "jekyll"]
@@ -33,14 +33,14 @@ kramdown:
 ####################################
 #
 owner:
-  name: Leonids
+  name: Rehan Guha
   avatar: leonids-logo.png
-  job: "A jekyll theme"
-  bio: "A simple and awesome blog theme powered by jekyll."
+  job: "Data Scientist & Machine Learning Engineer"
+  bio: ""
   email:
   disqus-shortname:
-  twitter: #username
-  facebook: #username
+  twitter: "rehanguhajoel"#username
+  facebook: "rehanguhajoel"#username
   google:
     plus: #username
     analytics:
@@ -48,10 +48,10 @@ owner:
     ad-client:
     ad-slot:
   bing-verify:
-  github: #username
+  github: "rehanguha"
   gitlab: #username
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
-  linkedin: #username
+  linkedin: "rehanguha"
   skype: #username
   xing: #username
   instagram: #username
