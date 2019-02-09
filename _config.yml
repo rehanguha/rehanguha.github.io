@@ -5,9 +5,9 @@
 #
 title: Portfolio & Blog
 email: rehanguha29@gmail.com
-description: A simple and awesome blog theme powered by jekyll.
+description: Portpolio and Blog
 url: # the base hostname & protocol for your site
-keywords: ["blog", "jekyll"]
+keywords: ["Rehan", "R. Guha", "Joel", "Machine Learning", "Resume"]
 
 #
 ###################################
@@ -34,13 +34,13 @@ kramdown:
 #
 owner:
   name: "Rehan Guha"
-  avatar: leonids-logo.png
+  avatar: profile_photo.jpg
   job: "Data Scientist & Machine Learning Engineer"
   bio: ""
   email:
   disqus-shortname:
-  twitter: "rehan_guha"#username
-  facebook: "rehanguhajoel"#username
+  twitter: "rehan_guha"
+  facebook: "rehanguhajoel"
   google:
     plus: #username
     analytics:
