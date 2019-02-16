@@ -20,7 +20,7 @@ Share it to your timeline!
 
 # Update 05/06/2016
 
-Important! It's better to download the gzipped files instead of forking the repo. I would really appreciate if you could give me a star. 
+Important! It's better to download the gzipped files instead of forking the repo. I would really appreciate if you could give me a star. 😁
 
 This project is under MIT license, so feel free to make it your own.
 
