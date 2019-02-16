@@ -1,4 +1,18 @@
-- name: leonids
-  descr: "Bacon ipsum dolor sit amet doner meatball jowl short ribs, chicken prosciutto salami frankfurter. Pig drumstick turducken short ribs, brisket meatloaf ham hock shankle andouille corned beef strip steak. Venison ham bresaola strip steak. Pork belly ribeye prosciutto t-bone."
-  image: pong.png
-  github: https://github.com/renyuanz/leonids
+- name: Financial Service Development Project (Quartz Development)
+  descr: "Accenture, 18 months"
+  
+- name: Self Learning Credit Approval System
+  descr: "Accenture, 3 months"
+  
+- name: AI Model Based Risk Management
+  descr: "Accenture, 4 months"
+  
+- name: Ship and Air Cargo Routing
+  descr: "Accenture, 2 months"
+  
+- name: Digital Content and Transaction Management using an Artificial Intelligence (AI) based Communication System
+  descr: "Accenture, 3 months"
+  
+- name: Routing System for Car Pool and Drop for the Employees
+  descr: "Accenture, 3 months"
+
