@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Portfolio &amp; Blog</title>
+    <description>Portpolio and Blog</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>2019-02-16</pubDate>
+    <lastBuildDate>Sat, 16 Feb 2019 12:17:56 +0530</lastBuildDate>
+    <generator>Jekyll v3.7.4</generator>
+    
+      <item>
+        <title>Statistical Sampling</title>
+        <description>&lt;p&gt;&lt;img src=&quot;probability-vs-non-probability-sampling.jpg&quot; alt=&quot;ProbabilityVsNonProbability&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;probability-sampling&quot;&gt;Probability Sampling&lt;/h2&gt;
+
+&lt;p&gt;Under probability sampling, for a given population, each element of that population has a chance of being picked to part of the sample. In other words, no single element of the population has a zero chance of being picked&lt;/p&gt;
+
+&lt;p&gt;The odd/chances/probability of picking any element is known or can be calculated. This is possible if we know the total number in the entire population such that we are then able to determine that odds of picking any one element.&lt;/p&gt;
+
+&lt;p&gt;Probability sampling involves random picking of elements from a population, and that is the reason as to why no element has a zero chance of being picked to be part of a sample.&lt;/p&gt;
+
+&lt;h2 id=&quot;methods-of-probability-sampling&quot;&gt;Methods of Probability Sampling&lt;/h2&gt;
+
+&lt;p&gt;There are a number of different methods of probability sampling including:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Random Sampling&lt;/p&gt;
+
+    &lt;p&gt;Random sampling is the method that most closely defines probability sampling. Each element of the sample is picked at random from the given population such that the probability of picking that element can be calculated by simply dividing the frequency of the element by the total number of elements in the population. In this method, all elements are equally likely to be picked if they have the same frequency.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Systematic Sampling&lt;/p&gt;
+
+    &lt;p&gt;Systematic sampling is the method that involves arranging the population in a given order and then picking the nth element from the ordered list of all the elements in the population. The probability of picking any given element can be calculated but is not likely to be the same for all elements in the population regardless of whether they have the same frequency.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Stratified Sampling&lt;/p&gt;
+
+    &lt;p&gt;Stratified sampling involves dividing the population into groups and then sampling from those different groups depending on a certain set criteria.&lt;/p&gt;
+
+    &lt;p&gt;For example, dividing the population of a certain class into boys and girls and then from those two different groups picking those who fall into the specific category that you intend to study with your sample.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Cluster Sampling&lt;/p&gt;
+
+    &lt;p&gt;Cluster sampling involves dividing up the population into clusters and assigning each element to one and only one cluster, in other words, an element can’t appear in more than one cluster.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Multistage Sampling&lt;/p&gt;
+
+    &lt;p&gt;Multistage sampling involves use of more than one probability sampling method and more than one stage of sampling, for example for using the stratified sampling method in the first stage and then the random sampling method in the second stage and so on until you achieve the sample that you want.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Probability Proportional to Size Sampling&lt;/p&gt;
+
+    &lt;p&gt;Under probability proportional to size sampling, the sample is chosen as a proportion to the total size of the population. It is a form of multistage sampling where in stage one you cluster the entire population and then in stage two you randomly select elements from the different clusters, but the number of elements that you select from each cluster is proportional to the size of the population of that cluster.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;non-probability-sampling&quot;&gt;Non-Probability Sampling&lt;/h2&gt;
+
+&lt;p&gt;Unlike probability sampling, under non-probability sampling certain elements of the population might have a zero chance of being picked. This is because we can’t accurately determine the chances/probability of picking a given element so we do not know whether the odds of picking that element are zero or greater than zero. Non-probability sampling may not always be a consequence of the sampler’s ignorance of the total number of elements in the population but may be a result of the sampler’s bias in the way he chooses the sample by excluding some elements.&lt;/p&gt;
+
+&lt;h2 id=&quot;methods-of-non-probability-sampling&quot;&gt;Methods of Non-Probability Sampling&lt;/h2&gt;
+
+&lt;p&gt;There are a number of different methods of Non-probability sampling which include:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Quota Sampling&lt;/p&gt;
+
+    &lt;p&gt;Quota sampling is similar to stratified sampling only that in this case, after the population is divided into groups, the elements are then sampled from the group using the sampler’s judgement and as a consequence the method loses any aspect of being random and can be extremely biased.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Accidental or Convenience Sampling&lt;/p&gt;
+
+    &lt;p&gt;Accidental sampling is a method of sampling where by the sampler picks the sample based on the fact that the elements that he/she picks are conveniently close at the moment. For example, if you walked down the street and sampled the first ten people you meet, the fact that they happened to be there is convenient for you but accidental for them which leads to the name of the method.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Purposive or Judgemental Sampling&lt;/p&gt;
+
+    &lt;p&gt;Purposive or judgemental sampling is a method of sampling where by the sampler picks the sample from the entire population solely based on the his/her judgement. The sampler controls to a very large extend which elements have a chance of being selected to be in the sample and which ones don’t.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Voluntary Sampling&lt;/p&gt;
+
+    &lt;p&gt;Voluntary sampling, as the name suggests, involves picking the sample based on which elements of the population volunteer to participate in the sample. This is the most common method used in research polls.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Snowball Sampling&lt;/p&gt;
+
+    &lt;p&gt;Snowball sampling is a method of sampling that relies on referrals of previously selected elements to pick other elements that will participate in the sample.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;references--further-reading&quot;&gt;References &amp;amp; Further Reading&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Sampling_(statistics)&quot;&gt;https://en.wikipedia.org/wiki/Sampling_(statistics)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stattrek.com/survey-research/sampling-methods.aspx&quot;&gt;https://stattrek.com/survey-research/sampling-methods.aspx&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>2019-02-16</pubDate>
+        <link>http://localhost:4000/articles/2019-02/statistical-sampling</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2019-02/statistical-sampling</guid>
+        
+        
+        <category>Statistics</category>
+        
+        <category>Sampling</category>
+        
+      </item>
+    
+  </channel>
+</rss>
