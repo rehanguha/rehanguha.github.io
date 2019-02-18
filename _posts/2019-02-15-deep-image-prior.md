@@ -1,0 +1,14 @@
+---
+layout: post
+title: "Brief :: Deep Image Prior"
+excerpt: "Read more..."
+tags: [CNN, Deep Learning]
+link: https://labs.imaginea.com/post/deep-image-prior/
+share: true
+---
+
+Deep Image Prior defies the idea that “deep learning only works in the context of massive datasets or models pretrained on such datasets”. 
+This paper showed that some deep neural networks could be successfully trained on a single image without large datasets, the structure of the network itself could be preventing deep networks from overfitting.
+
+
+Read more @ [Imaginea Labs Blog](https://labs.imaginea.com/post/deep-image-prior/)
