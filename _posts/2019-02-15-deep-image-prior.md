@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Brief :: Deep Image Prior"
-excerpt: "Read more..."
+excerpt: "Deep Image Prior is a type of convolutional neural network used to enhance a given image with no prior training data other than the image itself."
 tags: [CNN, Deep Learning]
 link: https://labs.imaginea.com/post/deep-image-prior/
 share: true
