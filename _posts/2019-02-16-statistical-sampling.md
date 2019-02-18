@@ -3,6 +3,8 @@ layout: post
 title: Statistical Sampling
 excerpt: "Sampling is a fundamental aspect of statistics, but unlike the other methods of data collection, sampling involves choosing a method of sampling which further influences the data that you will result with. There are two major categories in sampling: probability and non-probability sampling."
 categories: [Statistics, Sampling]
+tags: [Statistics]
+share: true
 comments: true
 ---
 ![ProbabilityVsNonProbability](probability-vs-non-probability-sampling.jpg)
