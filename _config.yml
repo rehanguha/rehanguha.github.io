@@ -8,7 +8,7 @@ email: rehanguha29@gmail.com
 description: Portpolio and Blog
 url: https://rehanguha.github.io/
 keywords: ["Rehan", "R. Guha", "Joel", "Machine Learning", "Resume"]
-comments: true
+
 #
 ###################################
 # Jekyll configuration
@@ -38,7 +38,7 @@ owner:
   job: "Data Scientist & Machine Learning Engineer"
   bio: ""
   email:
-  disqus-shortname:
+  disqus-shortname: "rehanguha"
   twitter: "rehan_guha"
   facebook: "rehanguhajoel"
   google:
