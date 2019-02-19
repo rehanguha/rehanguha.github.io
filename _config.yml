@@ -6,9 +6,9 @@
 title: Portfolio & Blog
 email: rehanguha29@gmail.com
 description: Portpolio and Blog
-url: # the base hostname & protocol for your site
+url: https://rehanguha.github.io/
 keywords: ["Rehan", "R. Guha", "Joel", "Machine Learning", "Resume"]
-
+comments: true
 #
 ###################################
 # Jekyll configuration
