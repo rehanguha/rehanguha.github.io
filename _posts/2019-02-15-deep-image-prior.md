@@ -12,7 +12,7 @@ comments: true
 Deep Image Prior defies the idea that “deep learning only works in the context of massive datasets or models pretrained on such datasets”. 
 This paper showed that some deep neural networks could be successfully trained on a single image without large datasets, the structure of the network itself could be preventing deep networks from overfitting.
 
-$$ f(x) = x_i ^ 2 $$
+\begin{f(x) = x_i ^ 2}
 
 
 Read more @ [Imaginea Labs Blog](https://labs.imaginea.com/post/deep-image-prior/)
