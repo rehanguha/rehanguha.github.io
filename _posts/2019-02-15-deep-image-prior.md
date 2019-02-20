@@ -7,6 +7,7 @@ categories: [CNN, Deep Learning]
 link: https://labs.imaginea.com/post/deep-image-prior/
 share: true
 comments: true
+mathjax: true
 ---
 
 Deep Image Prior defies the idea that “deep learning only works in the context of massive datasets or models pretrained on such datasets”. 
