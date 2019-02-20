@@ -6,6 +6,7 @@ tags: [Neural Network, Deep Learning]
 categories: [CNN, Deep Learning]
 link: https://labs.imaginea.com/post/deep-image-prior/
 share: true
+mathjax: true
 comments: true
 ---
 
