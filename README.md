@@ -1,7 +1,6 @@
 # Update 07/09/2018
 
 I'm planning to refactor Leonids theme!!!
-
 The goal is really simple: make documentation more intuitive and deployment simpler!!!
 
 Here is the plan:
