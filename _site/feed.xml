@@ -5,8 +5,8 @@
     <description>Portpolio and Blog</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>2019-02-16</pubDate>
-    <lastBuildDate>Sat, 16 Feb 2019 15:11:59 +0530</lastBuildDate>
+    <pubDate>2019-02-21</pubDate>
+    <lastBuildDate>Thu, 21 Feb 2019 12:10:15 +0530</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
@@ -102,14 +102,38 @@
   &lt;li&gt;&lt;a href=&quot;https://stattrek.com/survey-research/sampling-methods.aspx&quot;&gt;https://stattrek.com/survey-research/sampling-methods.aspx&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </description>
-        <pubDate>2019-02-16</pubDate>
+        <pubDate>2019-02-21</pubDate>
         <link>http://localhost:4000/articles/2019-02/statistical-sampling</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/statistical-sampling</guid>
+        
+        <category>Statistics</category>
         
         
         <category>Statistics</category>
         
         <category>Sampling</category>
+        
+      </item>
+    
+      <item>
+        <title>Brief :: Deep Image Prior</title>
+        <description>&lt;p&gt;Deep Image Prior defies the idea that “deep learning only works in the context of massive datasets or models pretrained on such datasets”. 
+This paper showed that some deep neural networks could be successfully trained on a single image without large datasets, the structure of the network itself could be preventing deep networks from overfitting.&lt;/p&gt;
+
+&lt;p&gt;Read more @ &lt;a href=&quot;https://labs.imaginea.com/post/deep-image-prior/&quot;&gt;Imaginea Labs Blog&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>2019-02-21</pubDate>
+        <link>http://localhost:4000/articles/2019-02/deep-image-prior</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2019-02/deep-image-prior</guid>
+        
+        <category>Neural Network</category>
+        
+        <category>Deep Learning</category>
+        
+        
+        <category>CNN</category>
+        
+        <category>Deep Learning</category>
         
       </item>
     
