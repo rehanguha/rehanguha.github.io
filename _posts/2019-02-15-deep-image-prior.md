@@ -99,8 +99,8 @@ Inpainting is a task where some of the pixels in an image are replaced with a bl
 
 ### References
 
-1. (https://dmitryulyanov.github.io/deep_image_prior)[https://dmitryulyanov.github.io/deep_image_prior]
-2. (https://en.wikipedia.org/wiki/Deep_Image_Prior)[https://en.wikipedia.org/wiki/Deep_Image_Prior]
+1. [https://dmitryulyanov.github.io/deep_image_prior](https://dmitryulyanov.github.io/deep_image_prior)
+2. [https://en.wikipedia.org/wiki/Deep_Image_Prior](https://en.wikipedia.org/wiki/Deep_Image_Prior)
 
 
 

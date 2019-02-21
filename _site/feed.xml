@@ -6,7 +6,7 @@
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
     <pubDate>2019-02-21</pubDate>
-    <lastBuildDate>Thu, 21 Feb 2019 20:41:17 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 21 Feb 2019 20:55:58 +0530</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
@@ -195,8 +195,8 @@ When we optimize using gradient descent, CNNs “resist” noisy (unnatural) ima
 &lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;(https://dmitryulyanov.github.io/deep_image_prior)[https://dmitryulyanov.github.io/deep_image_prior]&lt;/li&gt;
-  &lt;li&gt;(https://en.wikipedia.org/wiki/Deep_Image_Prior)[https://en.wikipedia.org/wiki/Deep_Image_Prior]&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dmitryulyanov.github.io/deep_image_prior&quot;&gt;https://dmitryulyanov.github.io/deep_image_prior&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Deep_Image_Prior&quot;&gt;https://en.wikipedia.org/wiki/Deep_Image_Prior&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;Find the same post @ &lt;a href=&quot;https://labs.imaginea.com/post/deep-image-prior/&quot;&gt;Imaginea Labs Blog&lt;/a&gt;&lt;/p&gt;
