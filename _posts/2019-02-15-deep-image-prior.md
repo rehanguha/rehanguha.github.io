@@ -53,13 +53,13 @@ How do we perform denoising in this scenario?
 
 One approach is to think of this problem as an optimization problem. We aim to create an image $x$ that is both close to the noisy image $x$ but is "noise-free", "clear" and "natural". 
 
-We can measure the "closeness" of images with the l2 distance between the pixel values $||x - x_0||^2$. 
+We can measure the "closeness" of images with the l2 distance between the pixel values $\|\|x-x_0\|\|^2$. 
 
 Suppose for a moment that there was a function that could measure the "naturalness" or "clearness" of an image $naturalness(x)$. For the sake of aligning the notation with the original paper, we will use the term $R(x) = - naturalness(x)$ for the remainder of this post. $R(X)$ measures the "unnaturalness" or "unclearness" of an image. In this case, our optimization objective would be
 
 $$min || x - x_0 ||^2 + R(x)$$
 
-The left term $|| x – x_0 ||^2$  pulls the term towards the original image, making sure that the image does not deviate too far. The right term pulls $x$ in the direction of natural images, (hopefully) reducing the noise.
+The left term $\|\| x – x_0 \|\|^2$  pulls the term towards the original image, making sure that the image does not deviate too far. The right term pulls $x$ in the direction of natural images, (hopefully) reducing the noise.
 
 The term $R(x)$ represents our prior over natural images and is, therefore, a “regularization term”. Without the regularization term $R(x)$, the optimizer will “overfit” on the noisy image – i.e. it will just return the noisy image. Therefore, how we define this prior/regularization term is crucial in obtaining high-quality results.
 
@@ -68,7 +68,7 @@ Unfortunately, we do not have an exact prior over natural images. Traditionally,
 **Randomly initialized**  convolutional neural networks (CNNs) that are used to generate images have an implicit "prior": they resist generating noisy images and have a bias towards natural images.
 The idea of the paper is to get rid of the explicit regularization term and use a CNN “decoder-encoder” model to construct the output image $x$. Expressed as an equation, the optimization objective becomes
 
-$min || f_\theta (z) – x_0 ||^2$
+$$min|| f_\theta (z) – x_0 ||^2$$
  
 where $\theta$ represents the parameters of the model and $z$ is a randomly initialized latent vector. Instead of directly optimizing $x$, we optimize $\theta$ using gradient descent. The surprising aspect of this paper is that we initialize $\theta$ randomly.
 Using this property, we can train CNNs to conduct denoising, super-resolution, and a host of other tasks on a  **single image**.
@@ -107,4 +107,4 @@ Inpainting is a task where some of the pixels in an image are replaced with a bl
 
 
 
-Read more @ [Imaginea Labs Blog](https://labs.imaginea.com/post/deep-image-prior/)
+Find the same post @ [Imaginea Labs Blog](https://labs.imaginea.com/post/deep-image-prior/)
