@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Brief :: Deep Image Prior"
+title: "Review :: Deep Image Prior"
 excerpt: "Deep Image Prior is a type of convolutional neural network used to enhance a given image with no prior training data other than the image itself."
-tags: [Neural Network, Deep Learning]
-categories: [CNN, Deep Learning]
+tags: [Neural Network, Deep Learning, CNN]
+categories: [Machine Learning, Image]
 link: https://labs.imaginea.com/post/deep-image-prior/
 share: true
 comments: true
@@ -25,7 +25,7 @@ This post is a digest of the paper, rather than a comprehensive summary.
 
 ### From the "Deep Image Prior" Author 
 
-{{< youtube id="-g1NsTuP1_I" >}}
+{% include youtube.html id="-g1NsTuP1_I" %}
 
 
 ### Brief Explanation of "How it Works?"
@@ -99,8 +99,8 @@ Inpainting is a task where some of the pixels in an image are replaced with a bl
 
 ### References
 
-1. https://dmitryulyanov.github.io/deep_image_prior
-2. https://en.wikipedia.org/wiki/Deep_Image_Prior
+1. (https://dmitryulyanov.github.io/deep_image_prior)[https://dmitryulyanov.github.io/deep_image_prior]
+2. (https://en.wikipedia.org/wiki/Deep_Image_Prior)[https://en.wikipedia.org/wiki/Deep_Image_Prior]
 
 
 
