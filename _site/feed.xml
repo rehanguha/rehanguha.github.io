@@ -6,7 +6,7 @@
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
     <pubDate>2019-02-21</pubDate>
-    <lastBuildDate>Thu, 21 Feb 2019 12:10:15 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 21 Feb 2019 20:17:33 +0530</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
@@ -119,6 +119,113 @@
         <title>Brief :: Deep Image Prior</title>
         <description>&lt;p&gt;Deep Image Prior defies the idea that “deep learning only works in the context of massive datasets or models pretrained on such datasets”. 
 This paper showed that some deep neural networks could be successfully trained on a single image without large datasets, the structure of the network itself could be preventing deep networks from overfitting.&lt;/p&gt;
+
+&lt;h3 id=&quot;overview&quot;&gt;Overview&lt;/h3&gt;
+
+&lt;p&gt;“Deep Image Prior” a startling paper showing that the  &lt;strong&gt;structure&lt;/strong&gt;  of the convolutional neural network (CNN) contains sufficient “knowledge” of natural images. It showed that some tasks – such as denoising and super-resolution – can actually be successfully conducted on a  &lt;strong&gt;single image&lt;/strong&gt; ,  &lt;strong&gt;without any additional training data&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;This post is a digest of the paper, rather than a comprehensive summary.&lt;/p&gt;
+
+&lt;h3 id=&quot;from-the-deep-image-prior-author&quot;&gt;From the “Deep Image Prior” Author&lt;/h3&gt;
+
+&lt;h3 id=&quot;brief-explanation-of-how-it-works&quot;&gt;Brief Explanation of “How it Works?”&lt;/h3&gt;
+
+&lt;p&gt;A prior is short for “prior distribution”, which is intuitively a distribution that represents our basic beliefs in the absence of information.&lt;/p&gt;
+
+&lt;p&gt;In the case of images, a prior distribution over images basically represents what we think ground truth images should look like. Consider the following two images:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;Picture1.png&quot; alt=&quot;Picture&quot; /&gt;The left image is random noise and the right image is a cat.&lt;/p&gt;
+
+&lt;p&gt;This may seem too obvious to mention, but from the perspective of a computer, both are just arrays of integers. The fact that we recognize one as a natural image and the other as noise indicates that humans have some implicit prior over what natural images should look like.
+Priors are used in generative models to ensure that we gain “natural” outputs. In the context of image generation, priors restrict the output image to resemble natural images instead of noise.&lt;/p&gt;
+
+&lt;p&gt;Regularizers can often be interpreted as incorporations of prior distributions. For instance, l2 regularization represents a belief that weights should be zero on average, and larger weights should be exponentially rarer compared to smaller weights. This is equivalent to putting a Gaussian prior over the weights.
+How are priors used in practice? Let’s take a practical example that is introduced in the paper: denoising an image. We will denote the noisy image as $x_0$ and the image we produce as $x$.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;Picture2.png&quot; alt=&quot;Picture&quot; /&gt;A noisy image (left) and its denoised, original version (right)&lt;/p&gt;
+
+&lt;p&gt;A straightforward approach to this problem would be to train a neural network that takes noisy images as input and outputs the denoised image. This is called a &lt;strong&gt;learning-based approach&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;The problem with this is that, this approach requires massive amounts of noisy and Ground Truth image pairs.
+Suppose now that we do not want to use any additional data.&lt;/p&gt;
+
+&lt;p&gt;How do we perform denoising in this scenario?&lt;/p&gt;
+
+&lt;p&gt;One approach is to think of this problem as an optimization problem. We aim to create an image $x$ that is both close to the noisy image $x$ but is “noise-free”, “clear” and “natural”.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;We can measure the “closeness” of images with the l2 distance between the pixel values $&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;x - x_0&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;^2$.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Suppose for a moment that there was a function that could measure the “naturalness” or “clearness” of an image $naturalness(x)$. For the sake of aligning the notation with the original paper, we will use the term $R(x) = - naturalness(x)$ for the remainder of this post. $R(X)$ measures the “unnaturalness” or “unclearness” of an image. In this case, our optimization objective would be&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;min || x - x_0 ||^2 + R(x)&lt;/script&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;The left term $&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;x – x_0&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;^2$  pulls the term towards the original image, making sure that the image does not deviate too far. The right term pulls $x$ in the direction of natural images, (hopefully) reducing the noise.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The term $R(x)$ represents our prior over natural images and is, therefore, a “regularization term”. Without the regularization term $R(x)$, the optimizer will “overfit” on the noisy image – i.e. it will just return the noisy image. Therefore, how we define this prior/regularization term is crucial in obtaining high-quality results.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, we do not have an exact prior over natural images. Traditionally, we have used hand-crafted features to represent the prior, but these always involve some level of arbitrariness. The essence of this paper is that CNNs can be used as priors over images; in other words, CNNs in some way “know” what natural images should and should not look like. The remainder of this post will explain how the paper has verified this statement and its explanation behind it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Randomly initialized&lt;/strong&gt;  convolutional neural networks (CNNs) that are used to generate images have an implicit “prior”: they resist generating noisy images and have a bias towards natural images.
+The idea of the paper is to get rid of the explicit regularization term and use a CNN “decoder-encoder” model to construct the output image $x$. Expressed as an equation, the optimization objective becomes&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$min&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;f_\theta (z) – x_0&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;^2$&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;where $\theta$ represents the parameters of the model and $z$ is a randomly initialized latent vector. Instead of directly optimizing $x$, we optimize $\theta$ using gradient descent. The surprising aspect of this paper is that we initialize $\theta$ randomly.
+Using this property, we can train CNNs to conduct denoising, super-resolution, and a host of other tasks on a  &lt;strong&gt;single image&lt;/strong&gt;.
+When we optimize using gradient descent, CNNs “resist” noisy (unnatural) images, and has a bias towards producing natural images. The following figure provides evidence to support this claim:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;Picture3.png&quot; alt=&quot;Picture&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;application&quot;&gt;Application&lt;/h3&gt;
+
+&lt;h5 id=&quot;1-denoising-and-general-reconstruction&quot;&gt;1. Denoising and general reconstruction&lt;/h5&gt;
+&lt;p&gt;Aside from simple additive noise, noise can come from all sorts of sources such as compression. The paper demonstrates the applicability of this method to a wide range of uses. Here is one example of successful denoising:
+&lt;img src=&quot;Picture4.png&quot; alt=&quot;Picture&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;2-super-resolution&quot;&gt;2. Super-resolution&lt;/h5&gt;
+&lt;p&gt;The goal of super resolution is to take a low-resolution image and up sample it to create a high-resolution version. The following are some results from the paper:
+&lt;img src=&quot;Picture5.png&quot; alt=&quot;Picture&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;3-inpainting&quot;&gt;3. Inpainting&lt;/h5&gt;
+&lt;p&gt;Inpainting is a task where some of the pixels in an image are replaced with a blank mask, and the erased portion has to be reconstructed. In this case, the pixels corresponding to the blank mask are excluded from the loss function, meaning we need some prior to determine how the blank pixels will be filled in.
+&lt;img src=&quot;Picture6.png&quot; alt=&quot;Picture&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;https://dmitryulyanov.github.io/deep_image_prior&lt;/li&gt;
+  &lt;li&gt;https://en.wikipedia.org/wiki/Deep_Image_Prior&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;Read more @ &lt;a href=&quot;https://labs.imaginea.com/post/deep-image-prior/&quot;&gt;Imaginea Labs Blog&lt;/a&gt;&lt;/p&gt;
 </description>
