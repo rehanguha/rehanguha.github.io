@@ -6,7 +6,7 @@
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
     <pubDate>2019-02-21</pubDate>
-    <lastBuildDate>Thu, 21 Feb 2019 20:26:33 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 21 Feb 2019 20:41:17 +0530</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
@@ -116,7 +116,7 @@
       </item>
     
       <item>
-        <title>Brief :: Deep Image Prior</title>
+        <title>Review :: Deep Image Prior</title>
         <description>&lt;p&gt;Deep Image Prior defies the idea that “deep learning only works in the context of massive datasets or models pretrained on such datasets”. 
 This paper showed that some deep neural networks could be successfully trained on a single image without large datasets, the structure of the network itself could be preventing deep networks from overfitting.&lt;/p&gt;
 
@@ -127,6 +127,8 @@ This paper showed that some deep neural networks could be successfully trained o
 &lt;p&gt;This post is a digest of the paper, rather than a comprehensive summary.&lt;/p&gt;
 
 &lt;h3 id=&quot;from-the-deep-image-prior-author&quot;&gt;From the “Deep Image Prior” Author&lt;/h3&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;100%&quot; src=&quot;https://www.youtube.com/embed/-g1NsTuP1_I&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;h3 id=&quot;brief-explanation-of-how-it-works&quot;&gt;Brief Explanation of “How it Works?”&lt;/h3&gt;
 
@@ -193,8 +195,8 @@ When we optimize using gradient descent, CNNs “resist” noisy (unnatural) ima
 &lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;https://dmitryulyanov.github.io/deep_image_prior&lt;/li&gt;
-  &lt;li&gt;https://en.wikipedia.org/wiki/Deep_Image_Prior&lt;/li&gt;
+  &lt;li&gt;(https://dmitryulyanov.github.io/deep_image_prior)[https://dmitryulyanov.github.io/deep_image_prior]&lt;/li&gt;
+  &lt;li&gt;(https://en.wikipedia.org/wiki/Deep_Image_Prior)[https://en.wikipedia.org/wiki/Deep_Image_Prior]&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;Find the same post @ &lt;a href=&quot;https://labs.imaginea.com/post/deep-image-prior/&quot;&gt;Imaginea Labs Blog&lt;/a&gt;&lt;/p&gt;
@@ -207,10 +209,12 @@ When we optimize using gradient descent, CNNs “resist” noisy (unnatural) ima
         
         <category>Deep Learning</category>
         
-        
         <category>CNN</category>
         
-        <category>Deep Learning</category>
+        
+        <category>Machine Learning</category>
+        
+        <category>Image</category>
         
       </item>
     
