@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Handling Overflow condition in calculating Euclidean Norm
-excerpt: "Sampling is a fundamental aspect of statistics, but unlike the other methods of data collection, sampling involves choosing a method of sampling which further influences the data that you will result with. There are two major categories in sampling: probability and non-probability sampling."
+	excerpt: "An error that occurs when the computer attempts to handle a number that is too large for it. If during execution of Euclidean Distance it arrives at a number outside this range, How will you handle it ?"
 categories: [Mathematics, Metric geometry]
 tags: [Norm, Distance]
 share: true
