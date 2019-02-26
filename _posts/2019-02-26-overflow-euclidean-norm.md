@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Norm2
+title: Handling Overflow condition in calculating Euclidean Norm
 excerpt: "Sampling is a fundamental aspect of statistics, but unlike the other methods of data collection, sampling involves choosing a method of sampling which further influences the data that you will result with. There are two major categories in sampling: probability and non-probability sampling."
-categories: [Statistics, Sampling]
-tags: [Statistics]
+categories: [Mathematics, Metric geometry]
+tags: [Norm, Distance]
 share: true
 comments: true
 mathjax: true
@@ -37,7 +37,7 @@ $\displaystyle \|\|x\|\|\_{2} := \sqrt{x^{2}\_{1} + x^{2}\_{2} +...+ x^{2}\_{n}}
 
 we can also write as,
 
-$\displaystyle \|\|x\|\|\_2 \ :=\sqrt{\sum^{n-1}\_{i=0} \chi ^{2}_{i}}$
+$$\displaystyle \|x\|_2 \ :=\sqrt{\sum^{n-1}_{i=0} \chi ^{2}_{i}}$$
 
 The solution is to exploit the above equation:
 
@@ -57,7 +57,14 @@ where,
 
 $\displaystyle \alpha =\max^{n-1}\_{i=0} \ \|\chi _{i} \|\ ;\ \alpha  >0\ $
 
-> Note that there is no overflow for intermidiate results (when squaring) will happen because all the elements are of magnitude less than or equal to one.
+> Note that there is no overflow for intermediate results (when squaring) will happen because all the elements are of magnitude less than or equal to one.
+
+
+## Future Work
+
+Eliminating the same Overflow condition for calculating p-Norm.
+
+$ \|\|X\|\|\_{p} \ :=\ \left(\sum ^{n}\_{i=1} \|x\_{i} \|^{p}\right)^{\frac{1}{p}} \  $
 
 
 
