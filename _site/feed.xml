@@ -5,26 +5,92 @@
     <description>Portpolio and Blog</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>2019-03-11</pubDate>
-    <lastBuildDate>Mon, 11 Mar 2019 22:38:03 +0530</lastBuildDate>
+    <pubDate>2019-03-23</pubDate>
+    <lastBuildDate>Sat, 23 Mar 2019 23:37:47 +0530</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
-        <title>Handling Overflow condition in calculating Euclidean Norm</title>
-        <description>&lt;h4 id=&quot;continued-from&quot;&gt;Continued from…&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&quot;https://rehanguha.github.io//articles/2019-02/overflow-euclidean-norm&quot;&gt;Handling Overflow condition in calculating Euclidean Norm&lt;/a&gt;&lt;/p&gt;
+        <title>Handling Overflow condition in calculating p-Norm</title>
+        <description>&lt;h2 id=&quot;what-is-norm-&quot;&gt;What is Norm ?&lt;/h2&gt;
+
+&lt;p&gt;A norm is a function that assigns a strictly positive length or size to each vector in a vector space—except for the zero vector, which is assigned a length of zero.&lt;/p&gt;
 
 &lt;h2 id=&quot;p-norm-or-lp-norm&quot;&gt;&lt;em&gt;p&lt;/em&gt;-Norm or $L^p$ Norm&lt;/h2&gt;
 
-&lt;p&gt;On an n-dimensional Euclidean space $\displaystyle R_{n}$, the intuitive notion of length of the vector $\displaystyle x\ =\ ( x_{1} ,x_{2} ,\ …,\ x_{n})$ is captured by the formula&lt;/p&gt;
+&lt;p&gt;Let p ≥ 1 be a real number. The  &lt;em&gt;p&lt;/em&gt;-norm (also called $\displaystyle L_{p}$-Norm) $\displaystyle x\ =\ ( x_{1} ,x_{2} ,\ …,\ x_{n})$ is,&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;||X||_{p} \ :=\ \left(\sum ^{n}_{i=1} |x_{i} |^{p}\right)^{\frac{1}{p}} \&lt;/script&gt;
 
-&lt;p&gt;When &lt;em&gt;p&lt;/em&gt;=2, it is called Euclidean norm, Euclidean length, $\displaystyle L^{2}$ distance, $\displaystyle L^{2}$ norm.&lt;/p&gt;
+&lt;p&gt;When &lt;em&gt;p&lt;/em&gt;=1, it is called Taxi-cab norm, $\displaystyle L^{1}$ norm.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-norm2-or-euclidean-norm&quot;&gt;What is Norm2 or Euclidean Norm?&lt;/h2&gt;
+
+&lt;p&gt;On an n-dimensional Euclidean space $\displaystyle R_{n}$, the intuitive notion of length of the vector $\displaystyle x\ =\ ( x_{1} ,x_{2} ,\ …,\ x_{n})$ is captured by the formula&lt;/p&gt;
+
+&lt;p&gt;$\displaystyle ||x||_2 := \sqrt{x^2_1 + x^2_2  +…+ x^2_n} \ $&lt;/p&gt;
+
+&lt;p&gt;The Euclidean norm is also called the Euclidean length, $\displaystyle L^{2}$ distance, $\displaystyle L^{2}$ norm.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-overflow-and-underflow-condition-&quot;&gt;What is Overflow and Underflow condition ?&lt;/h2&gt;
+
+&lt;p&gt;Now, there is a largest (in magnitude) number that can be stored and a smallest (in magnitude) number not equal to zero, that can be stored. Storing number larger than the magnitude will cause the memory to Overflow and often it is stored as “Not-A-Number” or “NAN”. Now if we try to store a number lower than magnitude but great than zero that situation will result Underflow and it is often set to Zero.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-is-overflow-and-underflow-related-to-p-norm-&quot;&gt;How is Overflow and Underflow related to p-Norm ?&lt;/h2&gt;
+
+&lt;p&gt;Let us focus on Overflow. The problem for computing the length (2-norm) of a vector is that equals the square root of the sum of the component. 
+While the answer may not cause an overflow, but intermediate results when squaring components could. The same thing holds true for &lt;em&gt;p&lt;/em&gt;-Norm&lt;/p&gt;
 
 &lt;h2 id=&quot;how-can-we-solve-the-problem--during-numerical-computation-&quot;&gt;How can we solve the problem  during numerical computation ?&lt;/h2&gt;
 
-&lt;h2 id=&quot;what-is-overflow-and-underflow-condition-&quot;&gt;What is Overflow and Underflow condition ?&lt;/h2&gt;
+&lt;p&gt;$\displaystyle ||x||_{p} \ \ :=\ \ \sqrt[p]{x^{p}_{1} \ +\ x^{p}_{2} \ +…+\ x^{p}_{n}} \ $&lt;/p&gt;
+
+&lt;p&gt;we can also write as,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\displaystyle ||x||_{p} \ :=\sqrt[p]{\sum ^{n-1}_{i=0} \chi ^{p}_{i}}  \&lt;/script&gt;
+
+&lt;p&gt;The solution is to exploit the above equation:&lt;/p&gt;
+
+&lt;p&gt;$\displaystyle ||x||_{p} \ :=\sqrt[p]{\sum ^{n-1}_{i=0} \chi ^{p}_{i}}$&lt;/p&gt;
+
+&lt;p&gt;$\displaystyle \Longrightarrow \sqrt[p]{\sum ^{n-1}_{i=0} \ \left[ \alpha ^{p} \ \left(\frac{\chi _{i}}{\alpha }\right)^{p}\right]}$&lt;/p&gt;
+
+&lt;p&gt;$\displaystyle \Longrightarrow \sqrt[p]{\alpha ^{p} \ \sum ^{n-1}_{i=0} \ \left[\left(\frac{\chi _{i}}{\alpha }\right)^{p}\right]}$&lt;/p&gt;
+
+&lt;p&gt;$\displaystyle \Longrightarrow \alpha \ \sqrt[p]{\sum ^{n-1}_{i=0} \ \left[\left(\frac{\chi _{i}}{\alpha }\right)^{p}\right]}$&lt;/p&gt;
+
+&lt;p&gt;where,&lt;/p&gt;
+
+&lt;p&gt;$\displaystyle \alpha =\max^{n-1}_{i=0} \ |\chi _{i} |\ ;\ \alpha  &amp;gt;0\ $&lt;/p&gt;
+
+&lt;h3 id=&quot;taking-the-example-of-2-norm--euclidean-norm&quot;&gt;Taking the example of 2-Norm / Euclidean Norm,&lt;/h3&gt;
+
+&lt;p&gt;$\displaystyle ||x||_{2} := \sqrt{x^{2}_{1} + x^{2}_{2} +…+ x^{2}_{n}} \ $&lt;/p&gt;
+
+&lt;p&gt;we can also write as,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\displaystyle \|x\|_2 \ :=\sqrt{\sum^{n-1}_{i=0} \chi ^{2}_{i}}&lt;/script&gt;
+
+&lt;p&gt;Similarly as above:&lt;/p&gt;
+
+&lt;p&gt;$\displaystyle ||x||_{2} := \sqrt{\sum ^{n-1}_{i=0} \chi ^{2}_{i}} $&lt;/p&gt;
+
+&lt;p&gt;$\displaystyle \Longrightarrow \sqrt{\sum ^{n-1}_{i=0} \ \left[ \alpha ^{2} \ \left(\frac{\chi _{i}}{\alpha }\right)^{2}\right]}$&lt;/p&gt;
+
+&lt;p&gt;$\displaystyle \Longrightarrow \sqrt{\alpha ^{2} \ \sum ^{n-1}_{i=0} \ \left[\left(\frac{\chi _{i}}{\alpha }\right)^{2}\right]}$&lt;/p&gt;
+
+&lt;p&gt;$\displaystyle \Longrightarrow \alpha \sqrt{\sum ^{n-1}_{i=0} \ \left[\left(\frac{\chi _{i}}{\alpha }\right)^{2}\right]}$&lt;/p&gt;
+
+&lt;p&gt;$\displaystyle \Longrightarrow \alpha \sqrt{\left(\frac{x}{\alpha }\right)^{T}\left(\frac{x}{\alpha }\right)} \ $ , this is the added step which is equivalent as the previous equation.&lt;/p&gt;
+
+&lt;p&gt;where,&lt;/p&gt;
+
+&lt;p&gt;$\displaystyle \alpha =\max^{n-1}_{i=0} \ |\chi _{i} |\ ;\ \alpha  &amp;gt;0\ $&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note that there is no overflow for intermediate results (when squaring) will happen because all the elements are of magnitude less than or equal to one.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;how-to-handle-p-norm-overflow-&quot;&gt;How to Handle p-Norm Overflow ?&lt;/h2&gt;
 
 &lt;p&gt;Global Variables:&lt;/p&gt;
 
@@ -60,9 +126,9 @@
   &lt;li&gt;https://en.wikipedia.org/wiki/Euclidean_distance&lt;/li&gt;
 &lt;/ol&gt;
 </description>
-        <pubDate>2019-03-11</pubDate>
-        <link>http://localhost:4000/articles/2019-02/overflow-p-norm</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2019-02/overflow-p-norm</guid>
+        <pubDate>2019-03-23</pubDate>
+        <link>http://localhost:4000/articles/2019-03/overflow-p-norm</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2019-03/overflow-p-norm</guid>
         
         <category>Norm</category>
         
@@ -76,85 +142,6 @@
         <category>Metric geometry</category>
         
         <category>Code</category>
-        
-      </item>
-    
-      <item>
-        <title>Handling Overflow condition in calculating Euclidean Norm</title>
-        <description>&lt;h2 id=&quot;what-is-norm-&quot;&gt;What is Norm ?&lt;/h2&gt;
-
-&lt;p&gt;A norm is a function that assigns a strictly positive length or size to each vector in a vector space—except for the zero vector, which is assigned a length of zero.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-norm2-or-euclidean-norm&quot;&gt;What is Norm2 or Euclidean Norm?&lt;/h2&gt;
-
-&lt;p&gt;On an n-dimensional Euclidean space $\displaystyle R_{n}$, the intuitive notion of length of the vector $\displaystyle x\ =\ ( x_{1} ,x_{2} ,\ …,\ x_{n})$ is captured by the formula&lt;/p&gt;
-
-&lt;p&gt;$\displaystyle ||x||_2 := \sqrt{x^2_1 + x^2_2  +…+ x^2_n} \ $&lt;/p&gt;
-
-&lt;p&gt;The Euclidean norm is also called the Euclidean length, $\displaystyle L^{2}$ distance, $\displaystyle L^{2}$ norm.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-overflow-and-underflow-condition-&quot;&gt;What is Overflow and Underflow condition ?&lt;/h2&gt;
-
-&lt;p&gt;Now, there is a largest (in magnitude) number that can be stored and a smallest (in magnitude) number not equal to zero, that can be stored. Storing number larger than the magnitude will cause the memory to Overflow and often it is stored as “Not-A-Number” or “NAN”. Now if we try to store a number lower than magnitude but great than zero that situation will result Underflow and it is often set to Zero.&lt;/p&gt;
-
-&lt;h2 id=&quot;how-is-overflow-and-underflow-related-to-euclidean-norm-&quot;&gt;How is Overflow and Underflow related to Euclidean Norm ?&lt;/h2&gt;
-
-&lt;p&gt;Let us focus on Overflow. The problem for computing the length (2-norm) of a vector is that equals the square root of the sum of the component. 
-While the answer may not cause an overflow, but intermediate results when squaring components could.&lt;/p&gt;
-
-&lt;h2 id=&quot;how-can-we-solve-the-problem--during-numerical-computation-&quot;&gt;How can we solve the problem  during numerical computation ?&lt;/h2&gt;
-
-&lt;p&gt;$\displaystyle ||x||_{2} := \sqrt{x^{2}_{1} + x^{2}_{2} +…+ x^{2}_{n}} \ $&lt;/p&gt;
-
-&lt;p&gt;we can also write as,&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\displaystyle \|x\|_2 \ :=\sqrt{\sum^{n-1}_{i=0} \chi ^{2}_{i}}&lt;/script&gt;
-
-&lt;p&gt;The solution is to exploit the above equation:&lt;/p&gt;
-
-&lt;p&gt;$\displaystyle ||x||_{2} := \sqrt{\sum ^{n-1}_{i=0} \chi ^{2}_{i}} $&lt;/p&gt;
-
-&lt;p&gt;$\displaystyle \Longrightarrow \sqrt{\sum ^{n-1}_{i=0} \ \left[ \alpha ^{2} \ \left(\frac{\chi _{i}}{\alpha }\right)^{2}\right]}$&lt;/p&gt;
-
-&lt;p&gt;$\displaystyle \Longrightarrow \sqrt{\alpha ^{2} \ \sum ^{n-1}_{i=0} \ \left[\left(\frac{\chi _{i}}{\alpha }\right)^{2}\right]}$&lt;/p&gt;
-
-&lt;p&gt;$\displaystyle \Longrightarrow \alpha \sqrt{\sum ^{n-1}_{i=0} \ \left[\left(\frac{\chi _{i}}{\alpha }\right)^{2}\right]}$&lt;/p&gt;
-
-&lt;p&gt;$\displaystyle \Longrightarrow \alpha \sqrt{\left(\frac{x}{\alpha }\right)^{T}\left(\frac{x}{\alpha }\right)} \ $&lt;/p&gt;
-
-&lt;p&gt;where,&lt;/p&gt;
-
-&lt;p&gt;$\displaystyle \alpha =\max^{n-1}_{i=0} \ |\chi _{i} |\ ;\ \alpha  &amp;gt;0\ $&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Note that there is no overflow for intermediate results (when squaring) will happen because all the elements are of magnitude less than or equal to one.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;future-work&quot;&gt;Future Work&lt;/h2&gt;
-
-&lt;p&gt;Eliminating the same Overflow condition for calculating p-Norm.&lt;/p&gt;
-
-&lt;p&gt;$ ||X||_{p} \ :=\ \left(\sum ^{n}_{i=1} |x_{i} |^{p}\right)^{\frac{1}{p}} \  $&lt;/p&gt;
-
-&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;https://www3.ntu.edu.sg/home/ehchua/programming/java/datarepresentation.html&lt;/li&gt;
-  &lt;li&gt;https://en.wikipedia.org/wiki/Euclidean_distance&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>2019-03-11</pubDate>
-        <link>http://localhost:4000/articles/2019-02/overflow-euclidean-norm</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2019-02/overflow-euclidean-norm</guid>
-        
-        <category>Norm</category>
-        
-        <category>Distance</category>
-        
-        
-        <category>Mathematics</category>
-        
-        <category>Metric geometry</category>
         
       </item>
     
@@ -244,7 +231,7 @@ When we optimize using gradient descent, CNNs “resist” noisy (unnatural) ima
 
 &lt;p&gt;Find the same post @ &lt;a href=&quot;https://labs.imaginea.com/post/deep-image-prior/&quot;&gt;Imaginea Labs Blog&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>2019-03-11</pubDate>
+        <pubDate>2019-03-23</pubDate>
         <link>http://localhost:4000/articles/2019-02/deep-image-prior</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/deep-image-prior</guid>
         
@@ -354,7 +341,7 @@ When we optimize using gradient descent, CNNs “resist” noisy (unnatural) ima
   &lt;li&gt;&lt;a href=&quot;https://stattrek.com/survey-research/sampling-methods.aspx&quot;&gt;https://stattrek.com/survey-research/sampling-methods.aspx&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </description>
-        <pubDate>2019-03-11</pubDate>
+        <pubDate>2019-03-23</pubDate>
         <link>http://localhost:4000/articles/2019-02/statistical-sampling</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/statistical-sampling</guid>
         
