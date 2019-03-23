@@ -9,13 +9,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="An error that occurs when the computer attempts to handle a number that is too large for it. If during execution of Euclidean Distance it arrives at a number...">
   <meta name="keywords" content="Rehan, R. Guha, Joel, Machine Learning, and Resume">
-  <meta name="author" content="Handling Overflow condition in calculating Euclidean Norm | Portfolio &amp; Blog">
+  <meta name="author" content="Handling Overflow condition in calculating p-Norm | Portfolio &amp; Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f5f5f5">
 
   <!-- Twitter Tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Handling Overflow condition in calculating Euclidean Norm | Portfolio &amp; Blog">
+  <meta name="twitter:title" content="Handling Overflow condition in calculating p-Norm | Portfolio &amp; Blog">
   <meta name="twitter:description" content="An error that occurs when the computer attempts to handle a number that is too large for it. If during execution of Euclidean Distance it arrives at a number...">
   
     <meta property="twitter:image" content="http://localhost:4000/img/leonids-logo.png">
@@ -23,19 +23,19 @@
 
   <!-- Open Graph Tags -->
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="http://localhost:4000/articles/2019-02/overflow-euclidean-norm">
-  <meta property="og:title" content="Handling Overflow condition in calculating Euclidean Norm | Portfolio &amp; Blog">
+  <meta property="og:url" content="http://localhost:4000/articles/2019-03/overflow-p-norm">
+  <meta property="og:title" content="Handling Overflow condition in calculating p-Norm | Portfolio &amp; Blog">
   <meta property="og:description" content="An error that occurs when the computer attempts to handle a number that is too large for it. If during execution of Euclidean Distance it arrives at a number...">
   
     <meta property="og:image" content="http://localhost:4000/img/leonids-logo.png">
   
-  <title>Handling Overflow condition in calculating Euclidean Norm | Portfolio & Blog</title>
+  <title>Handling Overflow condition in calculating p-Norm | Portfolio & Blog</title>
 
   <!-- CSS files -->
   <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
   <link rel="stylesheet" href="http://localhost:4000/css/main.css">
 
-  <link rel="canonical" href="http://localhost:4000/articles/2019-02/overflow-euclidean-norm">
+  <link rel="canonical" href="http://localhost:4000/articles/2019-03/overflow-p-norm">
   <link rel="alternate" type="application/rss+xml" title="Portfolio &amp; Blog" href="http://localhost:4000/feed.xml" />
 
   <!-- Icons -->
@@ -158,16 +158,16 @@
 
 <div id="post">
   <header class="post-header">
-    <h1 title="Handling Overflow condition in calculating Euclidean Norm">Handling Overflow condition in calculating Euclidean Norm</h1>
+    <h1 title="Handling Overflow condition in calculating p-Norm">Handling Overflow condition in calculating p-Norm</h1>
     <span class="post-meta">
       <span class="post-date">
-        26 FEB 2019
+        23 MAR 2019
       </span>
       •
       <span class="read-time" title="Estimated read time">
   
   
-    2 mins read
+    3 mins read
   
 </span>
 
@@ -179,6 +179,14 @@
     <h2 id="what-is-norm-">What is Norm ?</h2>
 
 <p>A norm is a function that assigns a strictly positive length or size to each vector in a vector space—except for the zero vector, which is assigned a length of zero.</p>
+
+<h2 id="p-norm-or-lp-norm"><em>p</em>-Norm or $L^p$ Norm</h2>
+
+<p>Let p ≥ 1 be a real number. The  <em>p</em>-norm (also called $\displaystyle L_{p}$-Norm) $\displaystyle x\ =\ ( x_{1} ,x_{2} ,\ …,\ x_{n})$ is,</p>
+
+<script type="math/tex; mode=display">||X||_{p} \ :=\ \left(\sum ^{n}_{i=1} |x_{i} |^{p}\right)^{\frac{1}{p}} \</script>
+
+<p>When <em>p</em>=1, it is called Taxi-cab norm, $\displaystyle L^{1}$ norm.</p>
 
 <h2 id="what-is-norm2-or-euclidean-norm">What is Norm2 or Euclidean Norm?</h2>
 
@@ -192,12 +200,34 @@
 
 <p>Now, there is a largest (in magnitude) number that can be stored and a smallest (in magnitude) number not equal to zero, that can be stored. Storing number larger than the magnitude will cause the memory to Overflow and often it is stored as “Not-A-Number” or “NAN”. Now if we try to store a number lower than magnitude but great than zero that situation will result Underflow and it is often set to Zero.</p>
 
-<h2 id="how-is-overflow-and-underflow-related-to-euclidean-norm-">How is Overflow and Underflow related to Euclidean Norm ?</h2>
+<h2 id="how-is-overflow-and-underflow-related-to-p-norm-">How is Overflow and Underflow related to p-Norm ?</h2>
 
 <p>Let us focus on Overflow. The problem for computing the length (2-norm) of a vector is that equals the square root of the sum of the component. 
-While the answer may not cause an overflow, but intermediate results when squaring components could.</p>
+While the answer may not cause an overflow, but intermediate results when squaring components could. The same thing holds true for <em>p</em>-Norm</p>
 
 <h2 id="how-can-we-solve-the-problem--during-numerical-computation-">How can we solve the problem  during numerical computation ?</h2>
+
+<p>$\displaystyle ||x||_{p} \ \ :=\ \ \sqrt[p]{x^{p}_{1} \ +\ x^{p}_{2} \ +…+\ x^{p}_{n}} \ $</p>
+
+<p>we can also write as,</p>
+
+<script type="math/tex; mode=display">\displaystyle ||x||_{p} \ :=\sqrt[p]{\sum ^{n-1}_{i=0} \chi ^{p}_{i}}  \</script>
+
+<p>The solution is to exploit the above equation:</p>
+
+<p>$\displaystyle ||x||_{p} \ :=\sqrt[p]{\sum ^{n-1}_{i=0} \chi ^{p}_{i}}$</p>
+
+<p>$\displaystyle \Longrightarrow \sqrt[p]{\sum ^{n-1}_{i=0} \ \left[ \alpha ^{p} \ \left(\frac{\chi _{i}}{\alpha }\right)^{p}\right]}$</p>
+
+<p>$\displaystyle \Longrightarrow \sqrt[p]{\alpha ^{p} \ \sum ^{n-1}_{i=0} \ \left[\left(\frac{\chi _{i}}{\alpha }\right)^{p}\right]}$</p>
+
+<p>$\displaystyle \Longrightarrow \alpha \ \sqrt[p]{\sum ^{n-1}_{i=0} \ \left[\left(\frac{\chi _{i}}{\alpha }\right)^{p}\right]}$</p>
+
+<p>where,</p>
+
+<p>$\displaystyle \alpha =\max^{n-1}_{i=0} \ |\chi _{i} |\ ;\ \alpha  &gt;0\ $</p>
+
+<h3 id="taking-the-example-of-2-norm--euclidean-norm">Taking the example of 2-Norm / Euclidean Norm,</h3>
 
 <p>$\displaystyle ||x||_{2} := \sqrt{x^{2}_{1} + x^{2}_{2} +…+ x^{2}_{n}} \ $</p>
 
@@ -205,7 +235,7 @@ While the answer may not cause an overflow, but intermediate results when squari
 
 <script type="math/tex; mode=display">\displaystyle \|x\|_2 \ :=\sqrt{\sum^{n-1}_{i=0} \chi ^{2}_{i}}</script>
 
-<p>The solution is to exploit the above equation:</p>
+<p>Similarly as above:</p>
 
 <p>$\displaystyle ||x||_{2} := \sqrt{\sum ^{n-1}_{i=0} \chi ^{2}_{i}} $</p>
 
@@ -215,7 +245,7 @@ While the answer may not cause an overflow, but intermediate results when squari
 
 <p>$\displaystyle \Longrightarrow \alpha \sqrt{\sum ^{n-1}_{i=0} \ \left[\left(\frac{\chi _{i}}{\alpha }\right)^{2}\right]}$</p>
 
-<p>$\displaystyle \Longrightarrow \alpha \sqrt{\left(\frac{x}{\alpha }\right)^{T}\left(\frac{x}{\alpha }\right)} \ $</p>
+<p>$\displaystyle \Longrightarrow \alpha \sqrt{\left(\frac{x}{\alpha }\right)^{T}\left(\frac{x}{\alpha }\right)} \ $ , this is the added step which is equivalent as the previous equation.</p>
 
 <p>where,</p>
 
@@ -225,11 +255,34 @@ While the answer may not cause an overflow, but intermediate results when squari
   <p>Note that there is no overflow for intermediate results (when squaring) will happen because all the elements are of magnitude less than or equal to one.</p>
 </blockquote>
 
-<h2 id="future-work">Future Work</h2>
+<h2 id="how-to-handle-p-norm-overflow-">How to Handle p-Norm Overflow ?</h2>
 
-<p>Eliminating the same Overflow condition for calculating p-Norm.</p>
+<p>Global Variables:</p>
 
-<p>$ ||X||_{p} \ :=\ \left(\sum ^{n}_{i=1} |x_{i} |^{p}\right)^{\frac{1}{p}} \  $</p>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">x</span> <span class="o">=</span> <span class="p">[]</span> <span class="c"># Define the Vector</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c"># Define p &gt;=1, for the p-Norm</span></code></pre></figure>
+
+<p>Traditional Method which have a problem for Overflow while computing <em>p</em>-Norm:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">temp</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+    <span class="n">temp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="n">p</span><span class="p">)</span>
+<span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+<span class="n">sol2</span> <span class="o">=</span> <span class="p">(</span><span class="n">total</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">p</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sol2</span><span class="p">)</span></code></pre></figure>
+
+<p>Proposed Solution to eliminate Overflow while computing <em>p</em>-Norm:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">alpha</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">temp</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+    <span class="n">temp</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="o">/</span><span class="n">alpha</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+<span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+
+<span class="n">root</span> <span class="o">=</span> <span class="p">(</span><span class="n">total</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">p</span><span class="p">)</span>
+<span class="n">sol1</span> <span class="o">=</span> <span class="n">root</span><span class="o">*</span><span class="n">alpha</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sol1</span><span class="p">)</span></code></pre></figure>
 
 <h3 id="references">References</h3>
 
@@ -245,19 +298,19 @@ While the answer may not cause an overflow, but intermediate results when squari
   <h6>Share on: </h6>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2019-02/overflow-euclidean-norm" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2019-03/overflow-p-norm" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2019-02/overflow-euclidean-norm" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2019-03/overflow-p-norm" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2019-02/overflow-euclidean-norm" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2019-03/overflow-p-norm" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
     <li>
-      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2019-02/overflow-euclidean-norm" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2019-03/overflow-p-norm" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
     </li>
     <li>
-      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2019-02/overflow-euclidean-norm" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2019-03/overflow-p-norm" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
     </li>
   </ul>
 </div><!-- end share-buttons -->
