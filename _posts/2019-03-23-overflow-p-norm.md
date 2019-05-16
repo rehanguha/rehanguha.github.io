@@ -35,7 +35,7 @@ Now, there is a largest (in magnitude) number that can be stored and a smallest 
 
 ## How is Overflow and Underflow related to p-Norm ?
 
-Let us focus on Overflow. The problem for computing the length (2-norm) of a vector is that equals the square root of the sum of the component. 
+Let us focus on Overflow. The problem for computing the length (2-norm) of a vector is that equals the square root of the sum of the squared component. 
 While the answer may not cause an overflow, but intermediate results when squaring components could. The same thing holds true for *p*-Norm
 
 ## How can we solve the problem  during numerical computation ?
