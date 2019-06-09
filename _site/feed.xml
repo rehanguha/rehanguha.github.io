@@ -1,13 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Portfolio &amp; Blog</title>
+    <title>Rehan Guha -Portfolio &amp; Blog</title>
     <description>Portpolio and Blog</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>2019-03-23</pubDate>
-    <lastBuildDate>Sat, 23 Mar 2019 23:37:47 +0530</lastBuildDate>
+    <pubDate>2019-06-09</pubDate>
+    <lastBuildDate>Sun, 09 Jun 2019 22:06:01 +0530</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
+    
+      <item>
+        <title>Domain Adaptation / Sample Selection Bias</title>
+        <description>&lt;p&gt;This post is about the common issue in bias is a mismatch between the training and the test distribution.
+The issue of train/test mismatch has been widely studied under many different names:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Covariate Shift&lt;/li&gt;
+  &lt;li&gt;Sample Selection Bias&lt;/li&gt;
+  &lt;li&gt;Domain Adaptation&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;whats-the-problem-&quot;&gt;What’s the Problem ?&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Let’s start with a scenario:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A learning algorithm $A$ with a probabilistic classifier $h$ is trained for voice recognition and translation for cars. The dataset was collected and was trained and tested and it is found that the accuracy of the model is very high, say 90%. But when the same model was thrown into the real-life situation the model accuracy came out to be approximately 60%.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Why do you think this happened?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Lets consider two distributions $D_{source}$  and $D_{test}$ and we have labelled training/testing data from $D_{source}$ say $x_1, x_2, x_3, … , x_n$ totalling N samples. we also have K unlabeled Data i.e. the Realtime data $D_{test}$: $y_1, y_2, y_3, … , y_n$&lt;/p&gt;
+
+&lt;p&gt;$D_{source}$  and $D_{test}$ are the distribution of source and test data. Mathematically we can write as probability distibution of source data as $\Pr_{source} or \Pr_{s}$ and Test data as $\Pr_{test} or \Pr_{t}$&lt;/p&gt;
+
+&lt;p&gt;Domain adaptation is a field associated with machine learning and transfer learning. This scenario arises when we aim at learning from a source data distribution a well performing model on a different target data distribution.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-can-you-solve-it-&quot;&gt;How can you solve it ?&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Classic Test Error&lt;/strong&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\epsilon_{test} \leqslant \hat{\epsilon}_{train} \ +\ \sqrt{\frac{Complexity}{n}}&lt;/script&gt;
+
+&lt;p&gt;Now we are going to reweigh the source distribution based on how similar they are to the test distribution. This is justified using the importance sampling for switching expectations.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;Test Error =&gt; \epsilon _{t}(h) \ =\mathbb{E}_{\Pr_{t}[x]} \ \mathbb{E}_{\Pr[y|x]} \ [ h(x) \neq y]\\
+\Longrightarrow \sum _{x}\Pr_{t}[x] \ \mathbb{E}_{\Pr[y|x]}[ h(x) \neq y]\\
+\Longrightarrow \sum _{x}\frac{\Pr_{s}[x]}{\Pr_{s}[x]} \ \Pr_{t}[x] \ \mathbb{E}_{\Pr[y|x]} \ [ h(x) \neq y]\\
+\Longrightarrow \sum _{x}\frac{\Pr_{t}[x]}{\Pr_{s}[x]} \ \Pr_{s}[x] \ \mathbb{E}_{\Pr[y|x]} \ [ h(x) \neq y]\\
+\Longrightarrow \mathbb{E}_{\Pr_{s}[x]} \ \frac{\Pr_{t}[x]}{\Pr_{s}[x]} \ \mathbb{E}_{\Pr[y|x]} \ [ h(x) \neq y]&lt;/script&gt;
+
+&lt;p&gt;What we have achieved rewriting the test loss, which is an expectation over $\Pr_{t} $, as an expectation over $\Pr_{s}$ instead. This transformation was useful because we know $\Pr_{s}$ is a labeled data and not $\Pr_{t}$.&lt;/p&gt;
+
+&lt;p&gt;A learning algorithm $A$ with a probabilistic classifier $h$ should have a training set $x$ is weighted according to the ratio $\Pr_{t} : \Pr_{s}$. This makes sense: the classifier is told to pay more attention to the training examples that have a high probability under the new distribution, and less attention to training that has low probability under the new distribution.&lt;/p&gt;
+
+&lt;p&gt;Now the problem is that with this approach, we do not have access to $\Pr_{t}$ or $\Pr_{s}$ so we cannot compute this ratio. So we need to explicitly estimate the distribution i.e. know as Density Estimation. This is an incredibly difficult problem; far harder than the original adaptation problem.&lt;/p&gt;
+
+&lt;p&gt;We can try to estimate the ratio directly rather than separately estimating the two probability distributions.
+All examples are drawn according to some fixed base distribution $\Pr[y|x]$. Some of these are selected for the new distribution, and some of them are selected for the old distribution. We will use a selection variable “$\sigma$” to address the above situation. We will define as below,&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Redefining Source Distribution (Adaptation)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;1) Draw from the test $\Pr_{t}[x]$&lt;/p&gt;
+
+&lt;p&gt;2) Select into the source with $\Pr[ \sigma=1|x]$&lt;/p&gt;
+
+&lt;p&gt;$\Pr_{s}[x]=\frac{\Pr_{t}[x]\ \Pr[\sigma=1|x]}{\Pr[\sigma =1]}$&lt;/p&gt;
+
+&lt;p&gt;$\Pr[ \sigma =1]$ is a regular normalizer.&lt;/p&gt;
+
+&lt;p&gt;If we can estimate $\Pr[\sigma=1|x]$, then the ratio that we sought, then we can compute the &lt;strong&gt;Importance Ratio&lt;/strong&gt; as:&lt;/p&gt;
+
+&lt;p&gt;$\Pr_{s}[ x] \ =\ \frac{\Pr_{t}[ x] \ \Pr[ \sigma =1\ |\ x]}{\Pr[ \sigma =1]}&lt;br /&gt;
+&lt;br /&gt;
+\Longrightarrow \frac{\Pr_{t}[ x]}{\Pr_{s}[ x]} =\frac{\Pr[ \sigma =1]}{\Pr[ \sigma =1\ |\ x]}$&lt;/p&gt;
+
+&lt;p&gt;Therefore we can say,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\epsilon_{s}(h)\varpropto \mathbb{E}_{\Pr_{s}[x]}\frac{1}{\Pr[\sigma=1|x]} \mathbb{E}_{\Pr[y|x]}[h(x)\neq y]&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;What is the Adaptation Error?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\epsilon _{t}(h) \leqslant ??&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;A bound on the Adaptation Error&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Let $h$ be a binary hypothesis. If $\Pr_{s}[y|x] \ =\ \Pr_{t}[y|x]$, then&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\epsilon_{t}(h) \ &lt; \epsilon _{s}(h) \ +\ \int _{x}|\Pr_{t}( x) \ -\ \Pr_{s}(x)| dx %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;where, $\Pr_{s}[y|x] =\Pr_{t}[y|x]$ is the covariate shift assumption i.e. the conditional distribution is the same.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\epsilon _{s}( h) \ =\ \mathbb{E}_{\Pr_{s}[x]} \ \mathbb{E}_{\Pr[y|x]} \ [ h(x) \neq y]\\
+\therefore \\
+\\
+\epsilon _{t}( h) =\mathbb{E}_{\Pr_{t}[x]} \ \mathbb{E}_{\Pr[y|x]} \ [ h( x) \neq y]\\
+\Longrightarrow \int _{x}\int _{y}\Pr_{t}[x] \ \Pr[y|x] \ [ h(x) \neq y] \ dy\ dx\\
+\Longrightarrow \int _{x}\Pr_{t}[x]+\Pr_{s}[x]-\Pr_{s}[x] \ \times \int _{y}\Pr[y|x] \ [h(x) \neq y] \ dy\ dx\\
+\Longrightarrow \epsilon _{s}(h) +\int _{x}(\Pr_{t}[x] -\Pr_{s}[x]) \times \int _{y}\Pr[y|x] \ [h(x) \neq y] \ dy\ dx\ \leqslant \epsilon _{s} +\int _{x} |\ \Pr_{t}[x] -\Pr_{s}[x] \ |\ (1) \ dx\\
+\Longrightarrow \epsilon _{s}(h) \ +\ \int _{x}| \ \Pr_{t}[x] \ -\ \Pr_{s}[x] \ | \ dx\\
+\Longrightarrow \epsilon _{s}(h) \ +\ 2|\ \Pr_{t}[x] \ -\ \Pr_{s}[x] \ |_{var}\\
+\\
+where,\ |\ P-Q\ |_{var} =\sup _{e} \ |\ P(e) -Q(e) \ |=\frac{1}{2}\int _{x} |\ P( x) -Q( x) \ |\ dx&lt;/script&gt;
+
+</description>
+        <pubDate>2019-06-09</pubDate>
+        <link>http://localhost:4000/articles/2019-06/domain-adaptation</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2019-06/domain-adaptation</guid>
+        
+        <category>Deep Learning</category>
+        
+        <category>Error</category>
+        
+        <category>Sampling</category>
+        
+        <category>Distribution</category>
+        
+        <category>Transfer Learning</category>
+        
+        
+        <category>Mathematics</category>
+        
+        <category>Machine Learning</category>
+        
+        <category>Statistics</category>
+        
+        <category>Sampling</category>
+        
+      </item>
     
       <item>
         <title>Handling Overflow condition in calculating p-Norm</title>
@@ -37,7 +156,7 @@
 
 &lt;h2 id=&quot;how-is-overflow-and-underflow-related-to-p-norm-&quot;&gt;How is Overflow and Underflow related to p-Norm ?&lt;/h2&gt;
 
-&lt;p&gt;Let us focus on Overflow. The problem for computing the length (2-norm) of a vector is that equals the square root of the sum of the component. 
+&lt;p&gt;Let us focus on Overflow. The problem for computing the length (2-norm) of a vector is that equals the square root of the sum of the squared component. 
 While the answer may not cause an overflow, but intermediate results when squaring components could. The same thing holds true for &lt;em&gt;p&lt;/em&gt;-Norm&lt;/p&gt;
 
 &lt;h2 id=&quot;how-can-we-solve-the-problem--during-numerical-computation-&quot;&gt;How can we solve the problem  during numerical computation ?&lt;/h2&gt;
@@ -126,7 +245,7 @@ While the answer may not cause an overflow, but intermediate results when squari
   &lt;li&gt;https://en.wikipedia.org/wiki/Euclidean_distance&lt;/li&gt;
 &lt;/ol&gt;
 </description>
-        <pubDate>2019-03-23</pubDate>
+        <pubDate>2019-06-09</pubDate>
         <link>http://localhost:4000/articles/2019-03/overflow-p-norm</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-03/overflow-p-norm</guid>
         
@@ -231,7 +350,7 @@ When we optimize using gradient descent, CNNs “resist” noisy (unnatural) ima
 
 &lt;p&gt;Find the same post @ &lt;a href=&quot;https://labs.imaginea.com/post/deep-image-prior/&quot;&gt;Imaginea Labs Blog&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>2019-03-23</pubDate>
+        <pubDate>2019-06-09</pubDate>
         <link>http://localhost:4000/articles/2019-02/deep-image-prior</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/deep-image-prior</guid>
         
@@ -341,7 +460,7 @@ When we optimize using gradient descent, CNNs “resist” noisy (unnatural) ima
   &lt;li&gt;&lt;a href=&quot;https://stattrek.com/survey-research/sampling-methods.aspx&quot;&gt;https://stattrek.com/survey-research/sampling-methods.aspx&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </description>
-        <pubDate>2019-03-23</pubDate>
+        <pubDate>2019-06-09</pubDate>
         <link>http://localhost:4000/articles/2019-02/statistical-sampling</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/statistical-sampling</guid>
         
