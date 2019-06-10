@@ -104,7 +104,7 @@ $$\epsilon _{s}( h) \ =\ \mathbb{E}_{\Pr_{s}[x]} \ \mathbb{E}_{\Pr[y|x]} \ [ h(x
 \epsilon _{t}( h) =\mathbb{E}_{\Pr_{t}[x]} \ \mathbb{E}_{\Pr[y|x]} \ [ h( x) \neq y]\\
 \Longrightarrow \int _{x}\int _{y}\Pr_{t}[x] \ \Pr[y|x] \ [ h(x) \neq y] \ dy\ dx\\
 \Longrightarrow \int _{x}\Pr_{t}[x]+\Pr_{s}[x]-\Pr_{s}[x] \ \times \int _{y}\Pr[y|x] \ [h(x) \neq y] \ dy\ dx\\
-\Longrightarrow \epsilon _{s}(h) +\int _{x}(\Pr_{t}[x] -\Pr_{s}[x]) \times \int _{y}\Pr[y|x] \ [h(x) \neq y] \ dy\ dx\ \leqslant \epsilon _{s} +\int _{x} |\ \Pr_{t}[x] -\Pr_{s}[x] \ |\ (1) \ dx\\
+\Longrightarrow \epsilon _{s}(h) +\int _{x}(\Pr_{t}[x] -\Pr_{s}[x]) \times \int _{y}\Pr[y|x] \ [h(x) \neq y] \ dy\ dx\ \leqslant \epsilon _{s}(h) +\int _{x} |\ \Pr_{t}[x] -\Pr_{s}[x] \ |\ (1) \ dx\\
 \Longrightarrow \epsilon _{s}(h) \ +\ \int _{x}| \ \Pr_{t}[x] \ -\ \Pr_{s}[x] \ | \ dx\\
 \Longrightarrow \epsilon _{s}(h) \ +\ 2|\ \Pr_{t}[x] \ -\ \Pr_{s}[x] \ |_{var}\\
 \\
