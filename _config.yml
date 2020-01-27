@@ -39,7 +39,7 @@ plugins:
 owner:
   name: "Rehan Guha"
   avatar: profile_photo.jpg
-  job: "Data Scientist & Machine Learning Engineer"
+  job: "Machine Learning Researcher"
   bio: ""
   email:
   disqus-shortname: "rehanguha"
@@ -48,7 +48,7 @@ owner:
   google:
     plus: #username
     analytics: "UA-134752950-1"
-    verify: "U7HjdoLiR8k2x3jeuhalSy9roqYdzeYTIxuZIkROJyM"
+    google_verify: "U7HjdoLiR8k2x3jeuhalSy9roqYdzeYTIxuZIkROJyM"
     ad-client:
     ad-slot:
   bing-verify:
