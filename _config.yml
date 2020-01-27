@@ -7,6 +7,7 @@ title: Rehan Guha -Portfolio & Blog
 email: rehanguha29@gmail.com
 description: Portfolio and Blog
 url: https://rehanguha.github.io/
+repository: rehanguha/rehanguha.github.io
 keywords: ["Rehan", "R. Guha", "Joel", "Machine Learning", "Resume"]
 
 #
@@ -47,7 +48,7 @@ owner:
   google:
     plus: #username
     analytics: "UA-134752950-1"
-    verify:
+    verify: "U7HjdoLiR8k2x3jeuhalSy9roqYdzeYTIxuZIkROJyM"
     ad-client:
     ad-slot:
   bing-verify:
@@ -67,7 +68,7 @@ owner:
   youtube: #username
   soundcloud: #username
   weibo: #username
-  flickr: #username
+  flickr: rehanguha
   500px: #username
   codepen: #username
   reddit: rehanguha
