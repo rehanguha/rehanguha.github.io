@@ -3,7 +3,7 @@
   website: https://www.researchgate.net/publication/332464382_Multilevel_Database_Model_-A_form_of_Secured_stored_password
 
 - name: GRID SEARCHING -Novel way of Searching 2D Array
-  descr: "Linear/Sequential searching is the basic search algorithm used in data structures. Linear search is used to find a particular element in a 2D array. It is not compulsory to arrange an array in any order (Ascending or Descending) as in case of 2D binary search. In this paper, I present a unique searching algorithm named Grid Search, which helps to search an unsorted 2D Array/Matrix with least time complexity and iteration. We also have compared the Grid searching algorithm with Linear Search Algorithm. We used C++ for implementation and analysis of CPU time taken by both the algorithms. Results have shown that Grid Searching Algorithm is working well for all input values and it takes lesser time than Sequential Searching in all aspects."
+  descr: "Linear/Sequential searching is the basic search algorithm used in data structures."
   website: http://ijcat.com/archives/volume5/issue1/ijcatr05011005.pdf
   
 - name: "Dataset: Prime Numbers - First 1Lac"
