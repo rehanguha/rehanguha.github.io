@@ -35,14 +35,15 @@ $\displaystyle S(t) + I(t) + R(t) = N$
 
 The SIR system be expressed by the following set of ordinary differential equations:
 
-$\displaystyle \frac{\DifferentialD S}{\DifferentialD t} =-\beta SI$
+$\displaystyle \frac{dS}{dt} =-\beta SI$
 
-$\displaystyle \frac{\DifferentialD I}{\DifferentialD t} =\beta SI - \gamma I$
+$\displaystyle \frac{dI}{dt} =\beta SI - \gamma I$
 
-$\displaystyle \frac{\DifferentialD R}{\DifferentialD t} =\gamma I$
+$\displaystyle \frac{dR}{dt} =\gamma I$
 
 
-Python Code to Implement SIR Model:
+
+### Python Code to Implement Traditional SIR Model:
 
 ```python
 
