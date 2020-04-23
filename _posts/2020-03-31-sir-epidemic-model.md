@@ -1,6 +1,6 @@
 ---
 layout: post
-title: COVID-19 :: Analysis & Inference (Journal)
+title: COVID-19 -Analysis & Inference (Journal)
 excerpt: "Updated with my experiements & insights about COVID-19/SARS-CoV-2"
 categories: [Epidemic, Statistical Modelling, Code, website]
 tags: [COVID-19, Code, SARS-CoV-2, Journal]
