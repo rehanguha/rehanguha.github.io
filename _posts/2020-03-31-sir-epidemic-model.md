@@ -1,22 +1,25 @@
 ---
 layout: post
-title: SIR Epidemic Model with some Modifications
-excerpt: ""
-categories: [Epidemic, Statistical Modelling, Code]
-tags: [COVID-19, Code]
+title: COVID-19 :: Analysis & Inference (Journal)
+excerpt: "Updated with my experiements & insights about COVID-19/SARS-CoV-2"
+categories: [Epidemic, Statistical Modelling, Code, website]
+tags: [COVID-19, Code, SARS-CoV-2, Journal]
 share: true
 comments: true
 mathjax: true
 ---
+
+# [2 April 2020]
+
 ## The SIR Model
 
-The **SIR model** is one of the simplest compartmental models, and many models are derivatives of this basic form. 
+The **SIR model** is one of the simplest compartmental models, and many models are derivatives of this basic form.
 
-The model consists of three compartments: 
+The model consists of three compartments:
 
-- **S** for the number of susceptible, 
-- **I** for the number of infectious, and 
-- **R** for the number of recovered or deceased (or immune) individuals. 
+- **S** for the number of susceptible,
+- **I** for the number of infectious, and
+- **R** for the number of recovered or deceased (or immune) individuals.
 
 This model is reasonably predictive for infectious diseases which are transmitted from human to human, and where recovery confers lasting resistance, such as measles, mumps and rubella.
 
@@ -24,10 +27,9 @@ These variables ( **S** , **I**, and **R**) represent the number of people in ea
 
 (Source: [Wikipedia](https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SIR_model))
 
-
 ## Mathematical Background
 
-Let **N** be the size of the total population. 
+Let **N** be the size of the total population.
 
 Then,
 
@@ -41,9 +43,7 @@ $\displaystyle \frac{dI}{dt} =\beta SI - \gamma I$
 
 $\displaystyle \frac{dR}{dt} =\gamma I$
 
-
-
-### Python Code to Implement Traditional SIR Model:
+### Python Code to Implement Traditional SIR Model
 
 ```python
 
@@ -59,7 +59,7 @@ I0, R0 = 1, 0
 # Everyone else, S0, is susceptible to infection initially.
 S0 = N - I0 - R0
 # Contact rate, beta, and mean recovery rate, gamma, (in 1/days).
-beta, gamma = 0.2, 1./10 
+beta, gamma = 0.2, 1./10
 # A grid of time points (in days)
 t = np.linspace(0, 160, 160)
 
@@ -100,3 +100,11 @@ plt.show()
 **Output:**
 
 ![Picture](Traditional.png)
+
+# [30 March 2020]
+
+## COVID-19 Website
+
+I have built this website to see the trend for all types of cases over time.
+
+[COVID-19 Statistics](https://rehanguha.github.io/covid-19/)
