@@ -9,7 +9,18 @@ comments: true
 mathjax: true
 ---
 
-# [2 April 2020]
+## Table of Contents
+
+- [2 April 2020](#2-april-2020)
+  - [The SIR Model](#the-sir-model)
+  - [Mathematical Background](#mathematical-background)
+    - [Python Code to Implement Traditional SIR Model](#python-code-to-implement-traditional-sir-model)
+- [30 March 2020](#30-march-2020)
+  - [COVID-19 Website](#covid-19-website)
+
+---
+
+# 2 April 2020
 
 ## The SIR Model
 
@@ -101,7 +112,9 @@ plt.show()
 
 ![Picture](Traditional.png)
 
-# [30 March 2020]
+---
+
+# 30 March 2020
 
 ## COVID-19 Website
 
