@@ -12,7 +12,7 @@ mathjax: true
 ### Table of Contents
 
 - [2 May 2020](#2-may-2020)
-  - [Modified SIR Model](#modified-sir-model)
+  - [Modified SIR Model (SIRD model)](#modified-sir-model-sird-model)
   - [Mathematical Background](#mathematical-background)
     - [Python Code to Implement Modified SIR Model](#python-code-to-implement-modified-sir-model)
 - [15 April 2020](#15-april-2020)
@@ -21,6 +21,7 @@ mathjax: true
     - [Python Code to Implement Traditional SIR Model](#python-code-to-implement-traditional-sir-model)
 - [30 March 2020](#30-march-2020)
   - [COVID-19 Website](#covid-19-website)
+- [References](#references)
 
 ---
 
@@ -28,7 +29,7 @@ mathjax: true
 
 ---
 
-## Modified SIR Model
+## Modified SIR Model (SIRD model)
 
 When I was going through the traditional SIR your model I had a few observations
 
@@ -226,3 +227,12 @@ plt.show()
 I have built this website to see the trend for all types of cases over time.
 
 [COVID-19 Statistics](https://rehanguha.github.io/covid-19/)
+
+
+---
+---
+
+# References
+
+- https://scipython.com/book/chapter-8-scipy/additional-examples/the-sir-epidemic-model/
+- https://web.stanford.edu/~chadj/sird-paper.pdf
