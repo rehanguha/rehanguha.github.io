@@ -5,8 +5,9 @@
 
 ### Pre-requisite
 
- -Install Docker
+ - Install Docker
 
+### Steps to Run
 
 ```bash
 git clone https://github.com/rehanguha/rehanguha.github.io.git
