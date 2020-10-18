@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Overview of Container Loading Problem
-excerpt: "Staring guide for Container Loading Problem. It covers the basic theoretical concepts to kickstart with this problem."
+excerpt: "Staring guide for Container Loading Problems. It covers the basic theoretical concepts to kickstart with this problem. The blog talks about the problem space, minimization problem, maximization problem and multiple constraints for the problems."
 categories: [Theory, Optimization, Reference]
 tags: [CLP, Optimization, Concept]
 share: true
