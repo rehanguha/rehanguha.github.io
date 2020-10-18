@@ -1,12 +1,12 @@
 ---
 layout: post
 title: Overview of Container Loading Problem
-excerpt: "Updated with my experiements & insights about COVID-19/SARS-CoV-2"
-categories: [Epidemic, Statistical Modelling, Code, website]
-tags: [COVID-19, Code, SARS-CoV-2, Journal]
+excerpt: "Staring guide for Container Loading Problem. It covers the basic theoretical concepts to kickstart with this problem."
+categories: [Theory, Optimization, Reference]
+tags: [CLP, Optimization, Concept]
 share: true
 comments: true
-mathjax: true
+mathjax: false
 ---
 
 
