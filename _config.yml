@@ -38,8 +38,8 @@ plugins:
 #
 owner:
   name: "Rehan Guha"
-  avatar: profile_photo.jpg
-  job: "Machine Learning Researcher"
+  avatar: profile_photo.jpeg
+  job: "Author || ML Researcher"
   bio: ""
   email:
   disqus-shortname: "rehanguha"
