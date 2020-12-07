@@ -39,12 +39,12 @@ plugins:
 owner:
   name: "Rehan Guha"
   avatar: profile_photo.jpeg
-  job: "Author || ML Researcher"
-  bio: ""
-  email:
+  job: "Author -  ML Researcher"
+  bio: "To talk about myself is a bit of a challenge for me as I more comfortable while talking about my work and discussing about Philosophy & Science."
+  email: "rehanguha29@gmail.com"
   disqus-shortname: "rehanguha"
   twitter: "rehan_guha"
-  facebook: "rehanguhajoel"
+  facebook: 
   google:
     plus: #username
     analytics: "UA-134752950-1"
@@ -70,5 +70,5 @@ owner:
   flickr: rehanguha
   500px: #username
   codepen: #username
-  reddit: rehanguha
+  reddit:
   telegram: #username
