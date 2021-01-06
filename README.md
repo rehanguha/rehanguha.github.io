@@ -1,6 +1,13 @@
 # Personal Blog and Portfolio
 
 
+## Running with Jekyll
+
+```bash
+bundle install
+bundle exec jekyll serve
+```
+
 ## Running with Docker
 
 ### Pre-requisite
@@ -19,3 +26,4 @@ docker-compose up
 ```
 
 Check out the blog at `http://localhost:4000`
+
