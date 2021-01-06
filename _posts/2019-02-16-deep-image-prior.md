@@ -34,7 +34,7 @@ A prior is short for "prior distribution", which is intuitively a distribution t
 
 In the case of images, a prior distribution over images basically represents what we think ground truth images should look like. Consider the following two images:
 
-![Picture](Picture1.png)The left image is random noise and the right image is a cat. 
+![Picture](DP_Picture1.png)The left image is random noise and the right image is a cat. 
 
 This may seem too obvious to mention, but from the perspective of a computer, both are just arrays of integers. The fact that we recognize one as a natural image and the other as noise indicates that humans have some implicit prior over what natural images should look like.
 Priors are used in generative models to ensure that we gain "natural" outputs. In the context of image generation, priors restrict the output image to resemble natural images instead of noise.
@@ -42,7 +42,7 @@ Priors are used in generative models to ensure that we gain "natural" outputs. I
 Regularizers can often be interpreted as incorporations of prior distributions. For instance, l2 regularization represents a belief that weights should be zero on average, and larger weights should be exponentially rarer compared to smaller weights. This is equivalent to putting a Gaussian prior over the weights.
 How are priors used in practice? Let’s take a practical example that is introduced in the paper: denoising an image. We will denote the noisy image as $x_0$ and the image we produce as $x$.
 
-![Picture](Picture2.png)A noisy image (left) and its denoised, original version (right)
+![Picture](DP_Picture2.png)A noisy image (left) and its denoised, original version (right)
 
 A straightforward approach to this problem would be to train a neural network that takes noisy images as input and outputs the denoised image. This is called a **learning-based approach**. 
 
@@ -74,7 +74,7 @@ where $\theta$ represents the parameters of the model and $z$ is a randomly init
 Using this property, we can train CNNs to conduct denoising, super-resolution, and a host of other tasks on a  **single image**.
 When we optimize using gradient descent, CNNs “resist” noisy (unnatural) images, and has a bias towards producing natural images. The following figure provides evidence to support this claim:
 
-![Picture](Picture3.png)
+![Picture](DP_Picture3.png)
 
 
 
@@ -82,17 +82,17 @@ When we optimize using gradient descent, CNNs “resist” noisy (unnatural) ima
 
 ##### 1. Denoising and general reconstruction
 Aside from simple additive noise, noise can come from all sorts of sources such as compression. The paper demonstrates the applicability of this method to a wide range of uses. Here is one example of successful denoising:
-![Picture](Picture4.png)
+![Picture](DP_Picture4.png)
 
 
 ##### 2. Super-resolution
 The goal of super resolution is to take a low-resolution image and up sample it to create a high-resolution version. The following are some results from the paper:
-![Picture](Picture5.png)
+![Picture](DP_Picture5.png)
 
 
 ##### 3. Inpainting
 Inpainting is a task where some of the pixels in an image are replaced with a blank mask, and the erased portion has to be reconstructed. In this case, the pixels corresponding to the blank mask are excluded from the loss function, meaning we need some prior to determine how the blank pixels will be filled in.
-![Picture](Picture6.png)
+![Picture](DP_Picture6.png)
 
 
 
