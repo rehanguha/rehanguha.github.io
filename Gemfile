@@ -5,6 +5,8 @@ group :jekyll_plugins do
   gem "jekyll-sitemap"
   gem "jekyll-gist"
   gem "jekyll-codepen"
+  gem 'jekyll-feed'
+  gem 'jekyll-seo-tag'
 end
 
 
