@@ -17,7 +17,7 @@ Qualitative detection of IgM and IgG antibodies against SARS-CoV-2 in serum, pla
 The test cassette consists of: 
 
 1. a burgundy colored conjugate pad containing SARS-CoV-2 recombinant antigens (S and N proteins) conjugate with colloidal gold (SARS-CoV-2 conjugates) and rabbit IgG-gold conjugates; 
-2. a nitrocellulose membrane stri containing an IgG line (G Line) coated with anti-human IgG, an IgM line (M Line) coated with anti-human IgM, and the control line (C Line) coated with goat anti-rabbit IgG.
+2. a nitrocellulose membrane strip containing an IgG line (G Line) coated with anti-human IgG, an IgM line (M Line) coated with anti-human IgM, and the control line (C Line) coated with goat anti-rabbit IgG.
 
 ![](cellex_device-main.png)
 
@@ -44,7 +44,7 @@ The test cassette consists of:
 ### Here we will use Bayes Theorm to find out the probability.
 
 
-> Note: The result might be surprising for someone not from this feild. 
+> Note: The result might be surprising for someone not from this field. 
 
 
 $ P( Test \vert Covid ) = 0.938$ is the probability for the true test given the person has COVID i.e. the Positive Percent Agreement(PPA).\\
