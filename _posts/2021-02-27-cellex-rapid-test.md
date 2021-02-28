@@ -77,7 +77,7 @@ So, the posterior probability to actually have the immunity given you get a posi
 Now, if we double or tripple the probability of $P(C)$ (the porobability of getting Covid) for the frontline workers then, 
 If $P(C) = 0.026$ then the value of $P(C \vert T) = 0.3849$.
 
-We will just plot $P(C) v.s. P(C \vert T)$ for values $P(C) \in range(0,0.2)$ that is a person whose chance of getting COVID is 20%(which is a very unlikey case).
+We will just plot $P(C)$ v/s $P(C \vert T)$ for values $P(C) \in range(0,0.2)$ that is a person whose chance of getting COVID is 20%(which is a very unlikey case).
 
 ![](cellex_plot.png)
 
