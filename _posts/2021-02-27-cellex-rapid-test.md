@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cellex Rapid test :: Probability for getting Antibodies for SARS-CoV-2"
-excerpt: "The Cellex qSARS-CoV-2 IgG/IgM Rapid Test is a lateral flow chromatographic immunoassay which can detect antibodies against th SARS-CoV-2 virus. We will answer a quation what is the probability of a person haveing an antibody when that is is tested positive for COVID."
+excerpt: "The Cellex qSARS-CoV-2 IgG/IgM Rapid Test is a lateral flow chromatographic immunoassay which can detect antibodies against th SARS-CoV-2 virus. We will answer a quation what is the probability of a person having an antibody when that is is tested positive for COVID."
 categories: [Mathematics, Statistics, Epidemic]
 tags: [Probability, COVID-19, SARS-CoV-2]
 share: true
