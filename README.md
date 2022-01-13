@@ -18,11 +18,11 @@ bundle exec jekyll serve
 
 ```bash
 git clone https://github.com/rehanguha/rehanguha.github.io.git
+cd rehanguha.github.io.git
 ```
 
 ```bash
-cd rehanguha.github.io
-docker-compose up
+docker run --rm --volume="$PWD:/srv/jekyll" -e JEKYLL_UID=1001 -e JEKYLL_GID=116 -p 4000:4000 jekyll/jekyll:4.0 jekyll serve
 ```
 
 Check out the blog at `http://localhost:4000`
