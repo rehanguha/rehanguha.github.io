@@ -51,6 +51,7 @@ owner:
   google:
     plus: #username
     analytics: "UA-134752950-1"
+    ga4: "G-6KBF2J9YMF"
     ad-client:
     ad-slot:
   bing-verify:
