@@ -2,9 +2,8 @@
 layout: post
 title: "Decomposing Timestamp"
 excerpt: "This post shows us most possible ways to decompose the timestamp and other features."
-tags: [Image, Mathematics, Code, CV]
-categories: [Computer Vision, Code]
-link: https://github.com/rehanguha/brisque
+tags: [timeseries]
+categories: [Timeseries Analysis]
 share: true
 comments: true
 mathjax: false
