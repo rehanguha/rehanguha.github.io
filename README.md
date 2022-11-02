@@ -22,7 +22,7 @@ cd rehanguha.github.io.git
 ```
 
 ```bash
-docker run --rm --volume="$PWD:/srv/jekyll" -e JEKYLL_UID=1001 -e JEKYLL_GID=116 -p 4000:4000 rehanguha/jekyll:blog-v1.0 jekyll serve
+docker run --rm --volume="$PWD:/srv/jekyll" -e JEKYLL_UID=1001 -e JEKYLL_GID=116 -p 4000:4000 rehanguha/jekyll:blog-v1.2 jekyll serve
 ```
 
 Check out the blog at `http://localhost:4000`

@@ -7,6 +7,7 @@ group :jekyll_plugins do
   gem "jekyll-codepen"
   gem 'jekyll-feed'
   gem 'jekyll-seo-tag'
+  gem "jekyll-pdf-embed"
 end
 
 
