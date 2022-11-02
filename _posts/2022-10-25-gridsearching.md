@@ -16,7 +16,7 @@ Results have shown that Grid Searching Algorithm is working well for all input v
 
 ## Paper
 
-<!-- {% pdf {{ page.pdf_file }} no_link %} -->
+{% pdf {{ page.pdf_file }} no_link %}
 
 ## GitHub code link
 
