@@ -33,13 +33,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-pdf-embed
   - jekyll-gist
-
-except:
-  - LICENSE
-  - README.md
-  - 
 
 #
 ###################################
