@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Decomposing Timestamp"
-excerpt: "This post shows us most possible ways to decompose the timestamp and other features."
+title: "Breakingdown Timestamp"
+excerpt: "This post shows us most possible ways to breakdown the timestamp and other features."
 tags: [timeseries]
 categories: [Timeseries Analysis]
 share: true
@@ -9,9 +9,9 @@ comments: true
 mathjax: false
 ---
 
-## Decomposing the Timestamp for Regression problems
+## Breakdown the Timestamp for Regression problems
 
-Example ::  **2038-01-19 03:14:07**
+Example :: **2038-01-19 03:14:07**
 
 - **timestamp**: The `timestamp` value that was decomposed. Example: 
 - **timestamp_unix**: Unix format of `timestamp`.
