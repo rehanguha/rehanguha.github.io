@@ -5,6 +5,7 @@ excerpt: "This post perfroms a comparative study between multiple optimizers and
 tags: [Optimization, Code, Deep Learning, Neural Network]
 categories: [Optimization, Mathematics, Machine Learning]
 share: true
+link: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4318767
 comments: true
 mathjax: false
 ---
@@ -23,17 +24,3 @@ Initial choice of Learning Rate is a key part of gradient based methods and has 
 ## GitHub code link
 
 Link: [https://github.com/rehanguha/Learning-Rate-Sensitivity](https://github.com/rehanguha/Learning-Rate-Sensitivity)
-
-## Cite
-
-Preprint.org:
-
-```text
-Guha, R. Benchmarking Gradient Based Optimizers’ Sensitivity to Learning Rate. Preprints 2023, 2023010118 (doi: 10.20944/preprints202301.0118.v1).
-```
-
-SSRN:
-
-```text
-Guha, Rehan, Benchmarking Gradient Based Optimizers' Sensitivity to Learning Rate (January 5, 2023). Available at SSRN: https://ssrn.com/abstract=4318767 or http://dx.doi.org/10.2139/ssrn.4318767
-```
