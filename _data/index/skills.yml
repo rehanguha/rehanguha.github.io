@@ -2,5 +2,5 @@
 
 label: Ability
 id : cs
-aspects: Python, ML, Maths, Stats, Domain
-percentage: 80, 90, 75, 70, 75
+aspects: Technical Mgmt., People Mgmt., Data Science, ML, MLE/MLOps, Gen AI, GCP, DL
+percentage: 80, 40, 90, 80, 60, 75, 70, 80
