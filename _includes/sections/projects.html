@@ -7,11 +7,13 @@
                 <p style="margin: 0"> 
                     <i> {{ project.descr }} </i> 
                     <br> 
+                    {% if project.time %}
                     <i class="fa fa-clock-o" aria-hidden="true" title="Until Now"></i> {{project.time}}
+                    {% endif %}
                 </p>
 
                 {% if project.github %}
-                <a href="{{ project.github }} "><i class="fa fa-fw fa-github"></i>GitHub</a>
+                <a href="{{ project.github }} " target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
                 {% endif %}
                 {% if project.website %}
                 <a href="{{ project.website }} "><i class="fa fa-fw fa-home"></i>Homepage</a>

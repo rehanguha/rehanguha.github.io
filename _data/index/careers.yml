@@ -1,12 +1,17 @@
 # careers section data
 # if you don't have language feature(language.yml is empty), ignore "i18n" items
+- name: _VOIS
+  link: https://www.vodafone.com/careers/professional-career-areas/shared-services
+  date: Jul 2021 - <i class="fa fa-clock-o" aria-hidden="true" title="Until Now"></i>
+  job: Lead Data Scientist & Data Science Technical Manager
+
 - name: Pramati Technologies
-  link: http://www.google.com/
-  date: Oct 2019 - <i class="fa fa-clock-o" aria-hidden="true" title="Until Now"></i>
+  link: https://pramati.com/
+  date: Oct 2019 - Jun 2021
   job: Senior Researcher (ML)
 
 - name: Pramati Technologies
-  link: http://www.google.com/
+  link: https://pramati.com/
   date: Oct 2018 - Sep 2019
   job: Researcher (ML)
 

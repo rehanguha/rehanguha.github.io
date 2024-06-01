@@ -1,6 +1,6 @@
-- name: Research & Development (R&D) Lab
-  descr: "Pramati Technologies"
-  time: " Ongoing"
+- name: BRISQUE
+  descr: "BRISQUE is a no-reference image quality score."
+  github: https://github.com/rehanguha/brisque
 
 - name: RPX Corporation -Machine Learning Project (Client Project)
   descr: "Pramati Technologies"
@@ -29,4 +29,3 @@
 - name: Routing System for Car Pool and Drop for the Employees
   descr: "Accenture"
   time: " 3 months"
-

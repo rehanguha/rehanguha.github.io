@@ -1,3 +1,8 @@
+- name: Machine Learning Cookbook with Python
+  descr: "A Cookbook that will help you implement Machine Learning algorithms and techniques by building real-world projects"
+  book: https://www.amazon.in/Machine-Learning-Cookbook-Python-Analytics/dp/9389898005/
+  website: https://in.bpbonline.com/products/machine-learning-cookbook-with-python
+
 - name: "Multilevel Database Model -A form of Secured stored password"
   descr: "This paper dealt with database architecture for storing password."
   website: https://www.researchgate.net/publication/332464382_Multilevel_Database_Model_-A_form_of_Secured_stored_password
@@ -5,8 +10,9 @@
 - name: GRID SEARCHING -Novel way of Searching 2D Array
   descr: "Linear/Sequential searching is the basic search algorithm used in data structures."
   website: http://ijcat.com/archives/volume5/issue1/ijcatr05011005.pdf
+  github: https://github.com/rehanguha/Grid-Searching-2D-Array
   
 - name: "Dataset: Prime Numbers - First 1Lac"
   descr: "Contains 1000 files with 100 prime numbers in each file"
   website: https://www.researchgate.net/publication/303842479_Prime_Numbers_-_First_1Lac
-  
+  github: https://github.com/rehanguha/Generating-Prime-Numbers
