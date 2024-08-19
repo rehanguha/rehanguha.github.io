@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Effect of USA Elections on the Economic Impacts"
+title: "The Effect of U.S. Presidential Elections on the Economic Impacts (Part-1)"
 excerpt: "The U.S. presidential election is a major event with significant implications for the global economy. The policies and international relations stance of the U.S. can cause ripple effects worldwide due to its economic influence and geopolitical power."
 tags: [society, election, analytics, report]
 categories: [society, analytics, survey, report]
