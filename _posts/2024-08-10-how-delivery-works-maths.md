@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Quick mathematical understanding on: How package/letter delivery works?"
+title: "Quick mathematical understanding behind: How package/letter/document delivery works?"
 excerpt: "Delivering a package from destination \"A\" to destination \"B\" involves a series of processes that can be modeled mathematically using principles from logistics, optimization, and operations research."
 categories: [Mathematics, Optimization, Reference, SCM, Logistics]
 tags: [Optimization, Concept, Logistics, Operations Research, SCM, delivery]
@@ -159,13 +159,13 @@ Given it's a straight route on highways, the shortest path is simply the direct 
 ### Transportation Mode Selection
 We select **truck transport** because it's cost-effective for this distance. Now, let's calculate the cost:
 
-- **Transportation Cost ($$C_trans$$):**
+- **Transportation Cost ($$C_{trans}$$):**
 
   $$
   C_{\text{trans}} = \text{Distance} \times \text{Cost per km} = 4500 \times 1.5 = \$6750
   $$
 
-- **Handling Costs ($$C_handling$$):**
+- **Handling Costs ($$C_{handling}$$):**
 
   $$
   C_{\text{handling}} = 50 (\text{at A}) + 50 (\text{at B}) = \$100
@@ -180,19 +180,19 @@ We select **truck transport** because it's cost-effective for this distance. Now
 ### Time Calculation
 To calculate the total time taken:
 
-- **Travel Time ($$T_travel$$):**
+- **Travel Time ($$T_{travel}$$):**
 
   $$
   T_{\text{travel}} = \frac{D}{v} = \frac{4500 \text{ km}}{80 \text{ km/h}} = 56.25 \text{ hours}
   $$
 
-- **Processing Time ($$T_processing$$):**
+- **Processing Time ($$T_{processing}$$):**
 
   $$
   T_{\text{processing}} = 5 \text{ hours}
   $$
 
-- **Loading/Unloading Time ($$T_loading/unloading$$):**
+- **Loading/Unloading Time ($$T_{loading/unloading}$$):**
 
   $$
   T_{\text{loading/unloading}} = 2 (\text{at A}) + 2 (\text{at B}) = 4 \text{ hours}
