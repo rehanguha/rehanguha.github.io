@@ -1,0 +1,27 @@
+<div class="github-projects-section">
+  <h4 class="github-projects-title">GitHub Projects</h4>
+  <div class="github-projects-list">
+    {% for project in site.data.github_projects.projects %}
+    <div class="github-project-item-link">
+      <div class="github-project-item">
+        <div class="github-project-main">
+          <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer" class="github-project-name-link">
+            <span class="github-project-name">{{ project.name }}</span>
+          </a>
+          <span class="github-project-description"> - {{ project.description }}</span>
+        </div>
+        <div class="github-project-links">
+          {% if project.live_url %}
+            <a href="{{ project.live_url }}" target="_blank" rel="noopener noreferrer" class="github-project-live-link">
+              Live Demo
+            </a>
+          {% endif %}
+          <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer" class="github-project-live-link">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

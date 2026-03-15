@@ -1,0 +1,25 @@
+# GitHub Projects Section Data
+# This file contains information about your top 5 GitHub projects
+# Update this file manually with your project details
+
+projects:
+  - name: "BRISQUE"
+    description: "No-reference image quality assessment algorithm implementation"
+    url: "https://github.com/rehanguha/brisque"
+    technologies: ["Python", "Image Processing", "OpenCV", "Machine Learning"]
+
+  - name: "PDistMap"
+    description: "Kernel density overlap metric for distributional similarity and cluster matching in ML applications"
+    url: "https://github.com/rehanguha/pdistmap"
+    technologies: ["Python", "Data Analysis", "Distance Metrics", "Scientific Computing"]
+
+  - name: "PhySimLab"
+    description: "Physics simulation package for ball drop experiments with aerodynamics, Magnus effect, etc."
+    url: "https://github.com/rehanguha/physimlab"
+    technologies: ["Python", "Physics Simulation", "Numerical Methods", "Visualization"]
+
+  - name: "MC-WealthLab"
+    description: "Browser-based Monte Carlo simulation tool for retirement planning and wealth accumulation analysis"
+    url: "https://github.com/rehanguha/mc-wealthlab"
+    live_url: "https://rehanguha.github.io/mc-wealthlab/"
+    technologies: ["Python", "Monte Carlo", "Economic Modeling", "Statistics"]

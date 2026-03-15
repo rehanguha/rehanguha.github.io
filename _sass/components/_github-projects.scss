@@ -1,0 +1,341 @@
+// Profile Card styling
+.profile-card {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  border: 1px solid rgba(141, 126, 220, 0.4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  .cover-card {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #8d7edc;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    float: none;
+    clear: both;
+    align-self: center;
+  }
+  
+  .author_name {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.25rem;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  .author_job {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+    text-align: center;
+  }
+  
+  .author_bio {
+    display: block;
+    font-size: 0.8rem;
+    color: #444;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    text-align: center;
+  }
+  
+  .nav {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .nav-item {
+    margin: 0;
+  }
+  
+  .nav-item a {
+    color: #8d7edc;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    background-color: rgba(141, 126, 220, 0.1);
+    border: 1px solid rgba(141, 126, 220, 0.3);
+  }
+  
+  .nav-item a:hover {
+    color: #fff;
+    background-color: #8d7edc;
+    border-color: #8d7edc;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .social-links {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #8d7edc;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    margin: 0 auto;
+    
+    &:hover {
+      background-color: #fff;
+      color: #8d7edc;
+      border: 1px solid #8d7edc;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+// GitHub Projects styling
+.github-projects-section {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  border: 1px solid rgba(141, 126, 220, 0.4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  .github-projects-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: #8d7edc;
+    border-bottom: 2px solid #8d7edc;
+    padding-bottom: 0.25rem;
+    text-align: center;
+  }
+  
+  .github-projects-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .github-project-item-link {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.4rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    &:hover {
+      .github-project-item {
+        background-color: rgba(141, 126, 220, 0.1);
+      }
+    }
+  }
+  
+  .github-project-item {
+    padding: 0.2rem 0.4rem;
+    border-bottom: 1px solid rgba(141, 126, 220, 0.2);
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  
+  .github-project-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .github-project-name-link {
+    text-decoration: none;
+    color: #3385FF;
+    font-weight: 700;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    
+    &:hover {
+      color: #fff;
+      transform: translateX(1px);
+    }
+  }
+  
+  .github-project-name {
+    text-decoration: none;
+    color: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    transition: inherit;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .github-project-description {
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: 400;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .github-project-links {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 1rem;
+  }
+  
+  .github-project-live-link {
+    display: inline-block;
+    padding: 0.2rem 0.4rem;
+    background-color: #8d7edc;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background-color: #fff;
+      color: #8d7edc;
+      border: 1px solid #8d7edc;
+      transform: translateY(-1px);
+    }
+  }
+  
+  .github-project-github-link {
+    display: inline-block;
+    padding: 0.2rem 0.4rem;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background-color: #fff;
+      color: #333;
+      border: 1px solid #333;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+// Published Books styling
+.published-books-section {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  border: 1px solid rgba(141, 126, 220, 0.4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  .published-books-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: #8d7edc;
+    border-bottom: 2px solid #8d7edc;
+    padding-bottom: 0.25rem;
+    text-align: center;
+  }
+  
+  .published-books-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .published-book-item-link {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.4rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    &:hover {
+      .published-book-item {
+        background-color: rgba(141, 126, 220, 0.1);
+      }
+    }
+  }
+  
+  .published-book-item {
+    padding: 0.2rem 0.4rem;
+    border-bottom: 1px solid rgba(141, 126, 220, 0.2);
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 4px;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  
+  .published-book-name {
+    text-decoration: none;
+    color: #3385FF;
+    font-weight: 700;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    
+    &:hover {
+      color: #fff;
+      transform: translateX(1px);
+    }
+  }
+}

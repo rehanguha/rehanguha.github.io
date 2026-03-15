@@ -1,0 +1,11 @@
+# Published Books and Publications Section Data
+# This file contains information about your published books and publications
+# Update this file manually with your book details
+
+books:
+  - name: "Machine Learning Cookbook with Python"
+    url: "https://www.amazon.in/Machine-Learning-Cookbook-Python-Analytics/dp/9389898005"
+    
+  - name: "Machine Learning Interview Guide: Job-oriented"
+    url: "https://www.amazon.in/Machine-Learning-Interview-Guide-Job-oriented/dp/936589199X"
+    

@@ -1,0 +1,12 @@
+<div class="published-books-section">
+  <h4 class="published-books-title">Published Books</h4>
+  <div class="published-books-list">
+    {% for book in site.data.published_books.books %}
+    <a href="{{ book.url }}" target="_blank" rel="noopener noreferrer" class="published-book-item-link">
+      <div class="published-book-item">
+        <span class="published-book-name">{{ book.name }}</span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
